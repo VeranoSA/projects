@@ -1,0 +1,82 @@
+/*set box-sizing: border-box; on an element, padding and border are included in the width and height*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: lightgrey;
+}
+
+/* Create two columns/boxes that floats next to each other */
+.city {
+  float: left;
+  width: 50%;
+  height: 300px;
+  background: grey;
+  padding: 20px;
+}
+
+/* Resize the city image */
+.city img {
+  width: 400px;
+  height: 200px;
+  padding: 0;
+  margin: 5px;
+}
+
+.text {
+  float: left;
+  padding: 20px;
+  width: 50%;
+  background-color: grey;
+  height: 300px;
+}
+table, th, td{
+  background-color: lightgrey;
+  border: solid;
+  border-collapse: collapse;
+}
+table{
+  width: 100%;
+}
+
+.city1 img, .city2 img, .city3 img{
+  float: left;
+  width: 250px;
+  background: #ccc;
+  padding: 0px;
+}
+
+.text1, .text2, .text3{
+  float: left;
+  width: 220px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Clear floats after the columns
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+display: table
+*/
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 857px) {
+  .city{
+    width: 100%;
+    height: auto;
+  }
