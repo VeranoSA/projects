@@ -107,6 +107,21 @@ h4 {
 
 /*Respondsive on Laptop*/
 @media (min-width:768px){
+  .box1, .box2{
+    height:200px;
+    font-size: 25px;
+  }
+  p {
+    font-size: 12.5px;
+  }
+  .box3 img{
+    height:200px;
+    width: 66.67%;
+  }
+  .box3, .box4 {
+    height:200px;
+  }
+
   .box5, .box6{
     width: 100%;
   }
@@ -115,10 +130,10 @@ h4 {
   }
   .box7, .box8, .box9, .box10, .box11, .box12{
     width: 16.6666667%;
-    height:195px;
+    height:250px;
   }
   .box8 img, .box10 img, .box12 img{
-    height: 195px;
+    height: 250px;
   }
 }
 /*Respondsive Tablet*/
@@ -176,21 +191,29 @@ h4 {
   .box2 img{
     width: 400px;
   }
+
   .box3 img {
-    width: 55%;
+    width: 100%;
     height: 320px;
   }
+
   .box3, .box4{
     height: 350px;
   }
   .box5{
-    height:400px;
+    height:420px;
   }
-  h2, h3{
+  h2{
     font-size: 50px;
+  }
+  h3{
+    font-size: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
   }
   p{
     font-size: 28px;
+    margin-left: 20px;
   }
   table {
     height: 250px;
@@ -202,7 +225,7 @@ h4 {
     font-size: 30px;
   }
   .box6{
-    height: 80px;
+    height: 90px;
   }
   .box7, .box9, .box11{
     font-size: 30px;
