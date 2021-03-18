@@ -16,6 +16,7 @@ body {
   left: 0;
   top: 0;
   font-size: 100%;
+  background-color: #3AAFA9;
 }
 
 /* ROOT FONT STYLES */
@@ -41,6 +42,7 @@ h3 {
 }
 
 h4 {
+  padding-top: 14px;
   font-size: 1.125rem;
 }
 
@@ -58,6 +60,9 @@ p {
   line-height: 1.8;
 }
 
+ul {
+  font-size: 0.825rem;
+}
 .font-light {
   font-weight: 300;
 }
@@ -171,6 +176,24 @@ p {
 .col-12-sm {
   width: 96%;
 }
+/*images*/
+.table img{
+  width: 50%;
+}
+
+.paris img{
+  width: 90%;
+}
+.col-4 img{
+  width: 100%;
+}
+
+/*table*/
+table,td, th{
+  border: solid;
+  border-collapse: collapse;
+  width: inherit;
+}
 
 .row::after {
 	content: "";
@@ -185,6 +208,9 @@ p {
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
     width: 80%;
+  }
+  .col-4 img{
+    width: 100%;
   }
 }
 
@@ -203,6 +229,10 @@ p {
 
   .col-4 {
     width: 29.33%;
+  }
+  .col-4 img{
+    padding-top: 20px;
+    width: 100%;
   }
 
   .col-5 {
@@ -246,5 +276,19 @@ p {
   .container {
     width: 75%;
     max-width: 60rem;
+  }
+  .col-4 img{
+    width: 100%;
+  }
+  .table img {
+    margin-top: 30px;
+  }
+  .six{
+    font-size: 17px;
+    margin-left: 30px;
+    margin-bottom: -10px;
+  }
+  .historical {
+    margin-bottom: -40px;
   }
 }

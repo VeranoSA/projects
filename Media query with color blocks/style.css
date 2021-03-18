@@ -57,8 +57,8 @@ body, html {
 .clearfix{
   clear: both;
 }
-/*
-/*Respondsive on large screens
+
+/*Respondsive on large screens*/
 @media (min-width:768px) {
   .box5, .box6{
     width: 100%;
@@ -66,8 +66,8 @@ body, html {
   .box7, .box8, .box9, .box10, .box11, .box12{
     width: 16.6666667%;
   }
-}*/
-/*Respondsive on small screens
+}
+/*Respondsive on small screens*/
 @media (max-width:768px) {
   .box3, .box4, .box5, .box6{
     width: 100%;
@@ -79,4 +79,4 @@ body, html {
     width: 50%;
     float: right;
   }
-}*/
+}
