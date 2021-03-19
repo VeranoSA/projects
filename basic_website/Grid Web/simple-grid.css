@@ -42,7 +42,6 @@ h3 {
 }
 
 h4 {
-  padding-top: 14px;
   font-size: 1.125rem;
 }
 
@@ -52,6 +51,7 @@ h5 {
 
 h6 {
   font-size: 0.875rem;
+  font-family: fantasy;
 }
 
 p {
@@ -205,12 +205,105 @@ table,td, th{
   display: none;
 }
 
+@media (max-width: 33.75em) { /*less than 540px*/
+  .six{
+    font-size: 17px;
+    margin-bottom: -10px;
+  }
+  .col-4 img{
+    width: 100%;
+    margin-top: 16px;
+  }
+  .col-4 ul{
+    margin-left: -30px;
+    font-size: 12px;
+  }
+  .small ,.small1, .small2, .heading, .table{
+    width: 46%;
+  }
+  .table img{
+    width: 80%;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  .H1{
+    margin-top: 28px;
+    margin-bottom: -20px;
+  }
+  .small1, .small2{
+    float: right;
+  }
+  .H2{
+    margin-top: -10px;
+  }
+  h3{
+    font-size: 120%;
+    margin-bottom: -20px;
+  }
+  h5{
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+  h6{
+    margin-bottom: -2px;
+  }
+  .forlang{
+    font-size: 150%;
+    margin-top: -15px;
+  }
+}
+
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
     width: 80%;
   }
   .col-4 img{
     width: 100%;
+  }
+  .six{
+    font-size: 17px;
+    margin-bottom: -10px;
+  }
+  .col-4 img{
+    width: 100%;
+    margin-top: 16px;
+  }
+  .col-4 ul{
+    margin-left: -30px;
+    font-size: 12px;
+  }
+  .small ,.small1, .small2, .heading, .table{
+    width: 46%;
+  }
+  .table img{
+    width: 80%;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  .H1{
+    margin-top: 28px;
+    margin-bottom: -20px;
+  }
+  .small1, .small2{
+    float: right;
+  }
+  .H2{
+    margin-top: -10px;
+  }
+  h3{
+    font-size: 120%;
+    margin-bottom: -20px;
+  }
+  h5{
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+  h6{
+    margin-bottom: -2px;
+  }
+  .forlang{
+    font-size: 150%;
+    margin-top: -15px;
   }
 }
 
@@ -230,11 +323,39 @@ table,td, th{
   .col-4 {
     width: 29.33%;
   }
-  .col-4 img{
-    padding-top: 20px;
-    width: 100%;
+  .six{
+    font-size: 17px;
+    margin-bottom: -10px;
   }
-
+  .col-4 ul{
+    margin-left: -30px;
+  }
+  .col-4 img{
+    width: 110%;
+  }
+  .table img {
+    margin-top: 30px;
+    margin-left: -45px;
+  }
+  h5{
+    margin-bottom: -20px;
+  }
+  .forlang{
+    margin-top: -30px;
+  }
+  .six{
+    font-size: 17px;
+    margin-bottom: -10px;
+  }
+  .historical {
+    margin-top: -2px;
+    margin-bottom: -35px;
+    font-size: 30px;
+  }
+  p{
+    margin-top: -20px;
+  }
+  
   .col-5 {
     width: 37.66%;
   }
