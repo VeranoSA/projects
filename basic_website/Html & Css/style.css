@@ -7,6 +7,7 @@ body, html {
   width:100%;
   height: 100%;
   background-color: #3AAFA9;
+  margin: 5px;
 }
 
 .container{
@@ -38,7 +39,6 @@ body, html {
   width: 50%;
   height: 160px;
   text-align: left;
-  padding-bottom: 30px;
 }
 .box4, p{
   background-color: #3AAFA9;
@@ -197,6 +197,7 @@ h6{
   }
   .box5{
     margin-bottom: 20px;
+    height: 190px;
   }
   h3{
     margin-bottom: 15px;
@@ -225,6 +226,7 @@ h6{
   }
   p {
     font-size: 9px;
+    margin-left: -10px;
   }
   .box3 img{
     height:200px;
@@ -233,6 +235,9 @@ h6{
   .box3{
     height:200px;
     width: 50%;
+  }
+  .box3, .box3 img{
+    padding-bottom:30px;
   }
   .box4 {
     margin-top: -40px;
@@ -250,6 +255,7 @@ h6{
   }
   h3{
       padding-top: 20px;
+      margin-left: -10px;
   }
   .box7, .box8, .box9, .box10, .box11, .box12{
     width: 16.6666667%;
@@ -301,6 +307,7 @@ h6{
   }
   .box5{
     margin-bottom: 20px;
+    height: 190px;
   }
   h3{
     margin-bottom: 15px;
@@ -338,6 +345,9 @@ h6{
       height:200px;
       width: 50%;
     }
+    .box3, .box3 img{
+      padding-bottom:30px;
+    }
     .box4 {
       margin-top: -40px;
       width: 50%;
@@ -369,7 +379,7 @@ h6{
     }
     h4{
       margin-top: 15px;
-      margin-left: -20px;
+      margin-left: 60px;
       margin-bottom: 10px;
     }
     .box8,.box10,.box12{
@@ -403,6 +413,9 @@ h6{
     width: 40%;
     height:350px;
   }
+  .box3, .box3 img{
+    padding-bottom:30px;
+  }
   .box4{
     margin-left: 100px;
     height: 350px;
@@ -412,6 +425,7 @@ h6{
   }
   h2{
     font-size: 50px;
+    margin-bottom: 5px;
   }
   h3{
     font-size: 20px;
