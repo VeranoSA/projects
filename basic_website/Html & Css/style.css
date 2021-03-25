@@ -310,7 +310,8 @@ h6{
     height: 190px;
   }
   h3{
-    margin-bottom: 15px;
+    margin-bottom: 2px;
+    font-size: 25px;
   }
   .place{
     margin-bottom: -5px;
