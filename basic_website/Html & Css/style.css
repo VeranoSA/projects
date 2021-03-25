@@ -212,6 +212,7 @@ h6{
     margin-top: 15px;
     margin-left: -20px;
     margin-bottom: 10px;
+    margin-top: 5px;
   }
 }
 /*Respondsive on Laptop*/
@@ -226,7 +227,7 @@ h6{
   }
   p {
     font-size: 9px;
-    margin-left: -10px;
+    margin-left: -31px;
   }
   .box3 img{
     height:200px;
@@ -255,7 +256,7 @@ h6{
   }
   h3{
       padding-top: 20px;
-      margin-left: -10px;
+      margin-left: -30px;
   }
   .box7, .box8, .box9, .box10, .box11, .box12{
     width: 16.6666667%;
@@ -337,6 +338,7 @@ h6{
     }
     p {
       font-size: 13px;
+      margin-left: -62px;
     }
     .box3 img{
       height:200px;
@@ -373,6 +375,7 @@ h6{
 
     h3{
       margin-top:15px;
+      margin-top: -61px;
     }
     .place{
       margin-top: -5px;
