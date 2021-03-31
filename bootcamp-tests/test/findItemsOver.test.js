@@ -1,4 +1,4 @@
-describe('findItemsOver', function () {
+describe('The findItemsOver function', function () {
     /*Test Case One*/
     var itemList = [
         {name : 'apples', qty : 10},

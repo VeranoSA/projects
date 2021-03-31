@@ -16,7 +16,7 @@ var salesData = [
     {department: 'carpentry', sales: 16109, day: 'Friday'}
 ];
 
-describe('mostProfitableDepartment', function () {
+describe('The mostProfitableDepartment function', function () {
     it('should return the most profitable department', function () {
         assert.deepEqual('outdoor', mostProfitableDepartment(salesData));
     });
