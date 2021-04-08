@@ -30,7 +30,14 @@ if (billItemType === 'call') {
     smsTotalTwoElem.innerHTML = sms.toFixed(2);
     var totalCost = calls + sms;
     totalTwoElem.innerHTML = totalCost.toFixed(2);
+    //color the total based
+if (totalCost >= 50){
+    totalTwoElem.classList.add('danger');
  }
+if (totalCost >= 30){
+    totalTwoElem.classList.add('warning');
+}
+}
 }
 //add an event listener for when the add button is pressed
 radioBillAddBtnElem.addEventListener('click', radioBtnClicked);
