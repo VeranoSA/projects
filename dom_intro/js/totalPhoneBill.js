@@ -13,5 +13,5 @@ function totalPhoneBill(callSms){
         var smsCall = ((sms * 0.65) + (call *2.75));
       	var smsCall = smsCall.toFixed(2);
     }
-  return "R" + smsCall;
+  return  + smsCall;
 }

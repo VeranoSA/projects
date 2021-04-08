@@ -21,8 +21,9 @@ function calculateBtnClicked(){
       var roundedBillTotal= totalPhoneBill(billString);
   
     //round to two decimals
-  
+    
     billTotalElement.innerHTML =roundedBillTotal;
+
   // change color when amount hits 20-30 cost
     if ( roundedBillTotal >= 20){
       billTotalElement.classList.add("warning");
@@ -43,4 +44,4 @@ function calculateBtnClicked(){
   
   }
   // add event listener
-  calculateBtn.addEventListener('click', calculateBtnClicked);
+  calculateBtnElement.addEventListener('click', calculateBtnClicked);
