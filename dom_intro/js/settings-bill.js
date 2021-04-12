@@ -19,7 +19,7 @@ var radioBillAddBtnElemThree = document.querySelector ('.billAddBtn');
 var updateSetBtn = document.querySelector ('.updateSettings');
 
 // create a variable that will keep track of all total bill
-var allTotalBill = 0
+var totalCostAdd = 0
 
 // create a variables that will keep track of all the settings
 var callCostThree = 0;
@@ -37,10 +37,11 @@ function settingBtn(){
     smsCostThree = Number(smsCostSettingElemThree.value);
     warningLevThree = warningLevelSettingElemThree.value;
     criticalLevThree = criticalLevelSettingElemThree.value;
-    //
-if (radioBillAddBtnElemThree.disabled){
-    radioBillAddBtnElemThree.disabled = false;
-}   
+
+    addClassList()
+// if (radioBillAddBtnElemThree.disabled){
+//     radioBillAddBtnElemThree.disabled = false;
+// }   
 }
 //add an event listener for when the 'Update settings' button is pressed
 updateSetBtn.addEventListener('click', settingBtn);
@@ -49,6 +50,7 @@ function radioBtnClickedThree(){
 
     var checkedRadioBillBtnThree = document.querySelector("input[name='billItemTypeWithSettings']:checked");
     if (checkedRadioBillBtnThree){
+        if(totalCostAdd < criticalLevThree){
         var billItemTypeThree = checkedRadioBillBtnThree.value;
         // billItemType will be 'call' or 'sms'
     if (billItemTypeThree === 'sms'){
@@ -57,18 +59,25 @@ function radioBtnClickedThree(){
     if (billItemTypeThree === 'call') {
         callTotalThree += callCostThree;
     }
+}
     //update the totals that is displayed on the screen.
     callCostTotaElemThree.innerHTML = callTotalThree.toFixed(2);
     smsCostTotalElemThree.innerHTML = smsTotalSetThree.toFixed(2);
-    var totalCostAdd = callTotalThree + smsTotalSetThree;
+    totalCostAdd = callTotalThree + smsTotalSetThree;
     totalCostsElemThree.innerHTML = totalCostAdd.toFixed(2);
 
+    addClassList()
+  }
+}
+
+
+function addClassList(){
     if(totalCostAdd > warningLevThree){
         totalCostsElemThree.classList.add ('warning');
     }
     if (totalCostAdd >= criticalLevThree){
         totalCostsElemThree.classList.add ('danger');
-        radioBillAddBtnElemThree.disabled = true;
+        // radioBillAddBtnElemThree.disabled = true;
     }
     if (totalCostAdd < criticalLevThree){
         totalCostsElemThree.classList.remove ('danger');
@@ -76,7 +85,6 @@ function radioBtnClickedThree(){
     if (totalCostAdd < warningLevThree){
         totalCostsElemThree.classList.remove ('warning');
     }
-  }
 }
 //add an event listener for when the add button is pressed
 radioBillAddBtnElemThree.addEventListener('click', radioBtnClickedThree);
