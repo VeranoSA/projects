@@ -39,9 +39,7 @@ function settingBtn(){
     criticalLevThree = criticalLevelSettingElemThree.value;
 
     addClassList()
-// if (radioBillAddBtnElemThree.disabled){
-//     radioBillAddBtnElemThree.disabled = false;
-// }   
+   
 }
 //add an event listener for when the 'Update settings' button is pressed
 updateSetBtn.addEventListener('click', settingBtn);
@@ -77,7 +75,6 @@ function addClassList(){
     }
     if (totalCostAdd >= criticalLevThree){
         totalCostsElemThree.classList.add ('danger');
-        // radioBillAddBtnElemThree.disabled = true;
     }
     if (totalCostAdd < criticalLevThree){
         totalCostsElemThree.classList.remove ('danger');
