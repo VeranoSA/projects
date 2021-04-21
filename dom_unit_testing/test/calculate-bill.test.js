@@ -1,18 +1,18 @@
 describe('Calculate Bill', function(){
 
-    it('should return 1 call', function(){
+    it('should return Total cost for 1 call', function(){
         let calcuBill = calculateBill();
             calcuBill.billCalculate("call");
         
         assert.equal(2.75, calcuBill.getTotalCost());
     });
-    it('should return 1 sms', function(){
+    it('should return Total cost for 1 sms', function(){
         let calcuBill = calculateBill();
             calcuBill.billCalculate("sms");
         
         assert.equal(0.75, calcuBill.getTotalCost());
     });
-    it('should return 2 calls and 3 sms', function(){
+    it('should return Total cost for 2 calls and 3 sms', function(){
         let calcuBill = calculateBill();
             calcuBill.billCalculate("call, sms, call, sms, sms");
         
