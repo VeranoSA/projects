@@ -90,22 +90,6 @@ describe('use the values', function(){
 
     it('should be able to use the call cost set for 2 calls at 1.25 each', function(){
         let settingsBill = billWithSettings();
-
-        settingsBill.setCriticalLev(8);
-        settingsBill.setCallCost(1.25);
-        settingsBill.setSmsCost(0.00);
-
-        settingsBill.makeCallCost();
-        settingsBill.makeCallCost();
-
-        assert.equal(2.50, settingsBill.getTotalCost());
-        assert.equal(2.50, settingsBill.getTotalCallCost());
-        assert.equal(0.00, settingsBill.getTotalSmsCost());
-        
-    });
-
-    it('should be able to use the call cost set for 2 calls at 1.25 each', function(){
-        let settingsBill = billWithSettings();
         settingsBill.setCriticalLev(8);
         settingsBill.setCallCost(1.25);
         settingsBill.setSmsCost(0.00);
