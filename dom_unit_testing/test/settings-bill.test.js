@@ -88,7 +88,7 @@ describe('use the values', function(){
         
     });
 
-    it('should be able to use the call cost set 2 calls at 1.25 each', function(){
+    it('should be able to use the call cost set for 2 calls at 1.25 each', function(){
         let settingsBill = billWithSettings();
 
         settingsBill.setCriticalLev(8);
