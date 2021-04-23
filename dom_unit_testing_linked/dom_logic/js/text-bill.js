@@ -10,32 +10,33 @@ var smsTotalOneElement = document.querySelector ('.smsTotalOne');
 var totalOneElement = document.querySelector ('.totalOne');
 
 //create a variable that will keep track of the total bill
-var callsTotal = 0;
-var smsTotal = 0;
+//var callsTotal = 0;
+//var smsTotal = 0;
+
+var textInst = textBillTotalFunc();
 
 function textBillTotal(){
 //get the value entered in the billType textfeild
-var billTypeEntered = billTypeTextElement.value.trim();
+var bill = billTypeTextElement.value.trim();
+textInst.billCalculation(bill);
 
-if (billTypeEntered === "call"){
-    callsTotal += 2.75
-}
-else if (billTypeEntered === "sms"){
-    smsTotal += 0.75;
-}
 //update the totals that is displayed on the screen.
-callTotalOneElement.innerHTML = callsTotal.toFixed(2);
-smsTotalOneElement.innerHTML = smsTotal.toFixed(2);
-var totalCost = callsTotal + smsTotal;
-totalOneElement.innerHTML = totalCost.toFixed(2);
+callTotalOneElement.innerHTML = textInst.getCallTotal().toFixed(2);
+smsTotalOneElement.innerHTML = textInst.getSmsTotal().toFixed(2);
+//var totalCost = callsTotal + smsTotal;
+totalOneElement.innerHTML = textInst.getTotalCost().toFixed(2);
 
 //color the total based on the criteria
-if (totalCost >= 50){
-    totalOneElement.classList.add('danger');
-}
-if (totalCost >= 30) {
-    totalOneElement.classList.add('warning');
-}
+totalOneElement.classList.remove("warning");
+totalOneElement.classList.remove("danger");
+totalOneElement.classList.add(textInst.totalClassName());
+
+//if (totalCost >= 50){
+//    totalOneElement.classList.add('danger');
+//}
+//if (totalCost >= 30) {
+//    totalOneElement.classList.add('warning');
+//}
 }
 //add an event listener for when the add button is pressed
 textTotalAddBtn.addEventListener('click', textBillTotal);

@@ -41,7 +41,19 @@ function billWithSettings(){
     function sendSmsCost(){
         if(!reachedCritcalLev()) {
             smsCostTotal += theSmsCost;
-        }   
+        }
+    }
+    function billSwitch(){
+    var checkedRadioBillBtnThree = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+    if (checkedRadioBillBtnThree){
+        var bill = checkedRadioBillBtnThree.value;
+        if(bill === "call"){
+            return makeCallCost();
+        }
+        if (bill === "sms"){
+            return sendSmsCost();
+        }
+    }  
     }
     function getTotalCost(){
         return callCostTotal + smsCostTotal;
@@ -82,7 +94,7 @@ return {
     getTotalSmsCost,
     sendSmsCost,
     totalClassName,
-    reachedCritcalLev
-
+    reachedCritcalLev,
+    billSwitch
 }
 }

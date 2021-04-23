@@ -19,26 +19,28 @@ var radioBillAddBtnElemThree = document.querySelector ('.billAddBtn');
 var updateSetBtn = document.querySelector ('.updateSettings');
 
 // create a variable that will keep track of all total bill
-var totalCostAdd = 0
+//var totalCostAdd = 0
 
 // create a variables that will keep track of all the settings
-var callCostThree = 0;
-var smsCostThree = 0;
-var warningLevThree = 0;
-var criticalLevThree = 0;
+//var callCostThree = 0;
+//var smsCostThree = 0;
+//var warningLevThree = 0;
+//var criticalLevThree = 0;
 
 // create a variables that will keep track of all three totals.
-var callTotalThree = 0;
-var smsTotalSetThree = 0;
+//var callTotalThree = 0;
+//var smsTotalSetThree = 0;
+
+var setInst = billWithSettings();
 
 
 function settingBtn(){
-    callCostThree = Number(callCostSetElemThree.value);
-    smsCostThree = Number(smsCostSettingElemThree.value);
-    warningLevThree = warningLevelSettingElemThree.value;
-    criticalLevThree = criticalLevelSettingElemThree.value;
+    setInst.setCallCost(Number(callCostSetElemThree.value));
+    setInst.setSmsCost(Number(smsCostSettingElemThree.value));
+    setInst.setWarningLev(warningLevelSettingElemThree.value);
+    setInst.setCriticalLev(criticalLevelSettingElemThree.value);
 
-    addClassList()
+    //addClassList()
    
 }
 //add an event listener for when the 'Update settings' button is pressed
@@ -47,29 +49,23 @@ updateSetBtn.addEventListener('click', settingBtn);
 function radioBtnClickedThree(){
 
     var checkedRadioBillBtnThree = document.querySelector("input[name='billItemTypeWithSettings']:checked");
-    if (checkedRadioBillBtnThree){
-        if(totalCostAdd < criticalLevThree){
-        var billItemTypeThree = checkedRadioBillBtnThree.value;
+
+        var bill = checkedRadioBillBtnThree.value;
+        setInst.billSwitch(bill);
+
         // billItemType will be 'call' or 'sms'
-    if (billItemTypeThree === 'sms'){
-        smsTotalSetThree += smsCostThree;
-    }
-    if (billItemTypeThree === 'call') {
-        callTotalThree += callCostThree;
-    }
-}
+    
     //update the totals that is displayed on the screen.
-    callCostTotaElemThree.innerHTML = callTotalThree.toFixed(2);
-    smsCostTotalElemThree.innerHTML = smsTotalSetThree.toFixed(2);
-    totalCostAdd = callTotalThree + smsTotalSetThree;
-    totalCostsElemThree.innerHTML = totalCostAdd.toFixed(2);
+    callCostTotaElemThree.innerHTML = setInst.getTotalCallCost().toFixed(2);
+    smsCostTotalElemThree.innerHTML = setInst.getTotalSmsCost().toFixed(2);
+    totalCostsElemThree.innerHTML = setInst.getTotalCost().toFixed(2);
 
-    addClassList()
+    //addClassList()
   }
-}
 
 
-function addClassList(){
+
+/*function addClassList(){
     if(totalCostAdd > warningLevThree){
         totalCostsElemThree.classList.add ('warning');
     }
@@ -83,6 +79,7 @@ function addClassList(){
         totalCostsElemThree.classList.remove ('warning');
     }
 }
+*/
 //add an event listener for when the add button is pressed
 radioBillAddBtnElemThree.addEventListener('click', radioBtnClickedThree);
 

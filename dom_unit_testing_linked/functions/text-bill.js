@@ -1,4 +1,4 @@
-function textBillTotal(){
+function textBillTotalFunc(){
 
 var callsTotal = 0;
 var smsTotal = 0;
