@@ -40,7 +40,7 @@ function settingBtn(){
     setInst.setWarningLev(warningLevelSettingElemThree.value);
     setInst.setCriticalLev(criticalLevelSettingElemThree.value);
 
-    //addClassList()
+    addClassList()
    
 }
 //add an event listener for when the 'Update settings' button is pressed
@@ -60,26 +60,16 @@ function radioBtnClickedThree(){
     smsCostTotalElemThree.innerHTML = setInst.getTotalSmsCost().toFixed(2);
     totalCostsElemThree.innerHTML = setInst.getTotalCost().toFixed(2);
 
-    //addClassList()
+    addClassList()
   }
 
 
 
-/*function addClassList(){
-    if(totalCostAdd > warningLevThree){
-        totalCostsElemThree.classList.add ('warning');
-    }
-    if (totalCostAdd >= criticalLevThree){
-        totalCostsElemThree.classList.add ('danger');
-    }
-    if (totalCostAdd < criticalLevThree){
-        totalCostsElemThree.classList.remove ('danger');
-    }
-    if (totalCostAdd < warningLevThree){
-        totalCostsElemThree.classList.remove ('warning');
-    }
+function addClassList(){
+    totalCostsElemThree.classList.remove("warning");
+    totalCostsElemThree.classList.remove("danger");
+    totalCostsElemThree.classList.add(setInst.totalClassName());
 }
-*/
 //add an event listener for when the add button is pressed
 radioBillAddBtnElemThree.addEventListener('click', radioBtnClickedThree);
 
