@@ -33,7 +33,6 @@ var updateSetBtn = document.querySelector ('.updateSettings');
 
 var setInst = billWithSettings();
 
-
 function settingBtn(){
     setInst.setCallCost(Number(callCostSetElemThree.value));
     setInst.setSmsCost(Number(smsCostSettingElemThree.value));
@@ -47,14 +46,11 @@ function settingBtn(){
 updateSetBtn.addEventListener('click', settingBtn);
 
 function radioBtnClickedThree(){
-
-    var checkedRadioBillBtnThree = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+        // billItemType will be 'call' or 'sms'
+        var checkedRadioBillBtnThree = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
         var bill = checkedRadioBillBtnThree.value;
         setInst.billSwitch(bill);
-
-        // billItemType will be 'call' or 'sms'
-    
     //update the totals that is displayed on the screen.
     callCostTotaElemThree.innerHTML = setInst.getTotalCallCost().toFixed(2);
     smsCostTotalElemThree.innerHTML = setInst.getTotalSmsCost().toFixed(2);
@@ -62,8 +58,6 @@ function radioBtnClickedThree(){
 
     addClassList()
   }
-
-
 
 function addClassList(){
     totalCostsElemThree.classList.remove("warning");
@@ -73,9 +67,4 @@ function addClassList(){
 //add an event listener for when the add button is pressed
 radioBillAddBtnElemThree.addEventListener('click', radioBtnClickedThree);
 
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the call / sms total
-// * add the appropriate value to the overall total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen.
-// * check the value thresholds and display the total value in the right color.
+

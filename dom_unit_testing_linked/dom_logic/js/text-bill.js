@@ -9,10 +9,6 @@ var smsTotalOneElement = document.querySelector ('.smsTotalOne');
 //get a reference to where overall total should be displayed
 var totalOneElement = document.querySelector ('.totalOne');
 
-//create a variable that will keep track of the total bill
-//var callsTotal = 0;
-//var smsTotal = 0;
-
 var textInst = textBillTotalFunc();
 
 function textBillTotal(){
@@ -31,17 +27,7 @@ totalOneElement.classList.remove("warning");
 totalOneElement.classList.remove("danger");
 totalOneElement.classList.add(textInst.totalClassName());
 
-//if (totalCost >= 50){
-//    totalOneElement.classList.add('danger');
-//}
-//if (totalCost >= 30) {
-//    totalOneElement.classList.add('warning');
-//}
 }
 //add an event listener for when the add button is pressed
 textTotalAddBtn.addEventListener('click', textBillTotal);
 
-//in the event listener check if the value in the bill type textbox is 'sms' or 'call'
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen

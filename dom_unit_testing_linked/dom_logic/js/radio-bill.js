@@ -18,10 +18,9 @@ function radioBtnClicked(){
 
 var checkedRadioBillBtn = document.querySelector("input[name='billItemType']:checked");
 if (checkedRadioBillBtn){
+    // billItemType will be 'call' or 'sms'
     var billItemType = checkedRadioBillBtn.value;
     radioInst.billCalculation(billItemType);
-
-    // billItemType will be 'call' or 'sms'
 
     //update the totals that is displayed on the screen.
     callTotalTwoElem.innerHTML = radioInst.getCallTotal().toFixed(2);
@@ -32,19 +31,8 @@ if (checkedRadioBillBtn){
     totalTwoElem.classList.remove("warning");
     totalTwoElem.classList.remove("danger");
     totalTwoElem.classList.add(radioInst.totalClassName());
-    //color the total based
-//if (totalCost >= 50){
-    //totalTwoElem.classList.add('danger');
- //}
-//if (totalCost >= 30){
-    //totalTwoElem.classList.add('warning');
-//}
+
 }
 }
 //add an event listener for when the add button is pressed
 radioBillAddBtnElem.addEventListener('click', radioBtnClicked);
-
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on screen.

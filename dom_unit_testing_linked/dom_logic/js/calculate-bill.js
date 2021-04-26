@@ -31,26 +31,6 @@ function calculateBtnClicked(){
     billTotalElement.classList.remove("danger");
     billTotalElement.classList.add(calInst.totalClassName(funCall.toFixed(2)));
 
-    console.log("Gobal: " +calInst.getTotalCost())
-    console.log("function:" + funCall.toFixed(2))
-  // // change color when amount hits 20-30 cost
-  //   if ( roundedBillTotal >= 20){
-  //     billTotalElement.classList.add("warning");
-  //   }
-  
-  //   if ( roundedBillTotal < 20){
-  //     billTotalElement.classList.remove("warning");
-  //   }
-  // // change color when amount hits 20-30 cost
-  //       if(roundedBillTotal > 30  ){
-  //     billTotalElement.classList.add("danger");
-  //   }
-  
-  //   if(roundedBillTotal < 30  ){
-  //   billTotalElement.classList.remove("danger");
-  //  //return billTotalElement.classList.add("warning");
-  // }
-  
   }
   // add event listener
   calculateBtnElement.addEventListener('click', calculateBtnClicked);
