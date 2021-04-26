@@ -19,7 +19,6 @@ textInst.billCalculation(bill);
 //update the totals that is displayed on the screen.
 callTotalOneElement.innerHTML = textInst.getCallTotal().toFixed(2);
 smsTotalOneElement.innerHTML = textInst.getSmsTotal().toFixed(2);
-//var totalCost = callsTotal + smsTotal;
 totalOneElement.innerHTML = textInst.getTotalCost().toFixed(2);
 
 //color the total based on the criteria
