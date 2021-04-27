@@ -15,6 +15,7 @@ body {
     left: 0;
     top: 0;
     font-size: 100%;
+    background-color: rgb(239, 251, 255);
 }
 
 /* ROOT FONT STYLES */
@@ -397,6 +398,6 @@ button:active {
 }
 
 .radio-toolbar input[type="radio"]:checked+label {
-    background-color: darkturquoise;
+    background-color: rgb(5, 169, 172);
     border-color: black;
 }

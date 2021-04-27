@@ -1,4 +1,4 @@
-function greet(){
+function greetFactory(greetMap){
 
 function greetNow(nameInput, language){
 
@@ -8,6 +8,19 @@ function greetNow(nameInput, language){
     let firstChar = nameInput.charAt(0).toUpperCase();
     nameInput = firstChar+str;
 
+     //counter initialize
+     if (localStorage['counter'] === undefined) {
+    //local storage can only store strings so convert to store object or arrays
+        localStorage.setItem('counter', JSON.stringify(0));
+    }
+
+    if (greetMap[nameInput] === undefined) {
+        greetMap[nameInput] = 0;
+        var counter = JSON.parse(localStorage.getItem('counter'));
+        //increament to the counter if the user has not been registered to the map
+        localStorage.setItem('counter', JSON.parse(counter + 1));
+    }
+    //return greeting based on selected language
     if(language === "English"){
         return 'Hello ' + nameInput + '!!!'
 
@@ -21,8 +34,24 @@ function greetNow(nameInput, language){
 
     }
 }
+ //function that returns the checked language button 
+ var setLang = function (value) {
+    var lang = '';
+    if (value === 'English') {
+        lang = 'English';
+    }
+    if (value === 'Zulu') {
+        lang = 'Zulu';
+    }
+    if (value === 'Tsonga') {
+        lang = 'Tsonga';
+    }
+    return lang
+}
 
 return {
 greetNow,
+setLang,
+greetMap
 }
-}  
+}
