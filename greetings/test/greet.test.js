@@ -20,5 +20,16 @@ describe('The Greet with factory function' , function(){
         assert.equal('Hello Ncebakazi!!!', greetFunc.greetNow("nceBaKazi", "English"));
         
     });
+    it('Should not increase the counter if the name has been greeted', function () {
+        let greetFunc = greetFactory({});
+        greetFunc.greetNow('Tebogo','English');
+        var countGreet1 = JSON.parse(localStorage.getItem('count'));
+        greetFunc.greetNow('Tebogo','Zulu');
+        var countGreet2 = JSON.parse(localStorage.getItem('count'));
+        
+        
+        
+        assert.equal(countGreet1,countGreet2);
+    });
 
     });

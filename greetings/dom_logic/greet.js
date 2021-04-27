@@ -4,6 +4,9 @@
 //localStorage.setItem - Set the value of the specified local storage item
 //JSON.parse() - When receiving data from a web server, the data is always a string.
 //Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+//JSON.stringify() - When sending data to a web server, the data has to be a string.
+//Convert a JavaScript object into a string
+
 
 //adding querySelectors and refs
 
