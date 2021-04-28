@@ -52,6 +52,6 @@ function greetNow(nameInput, language){
 return {
 greetNow,
 setLang,
-greetMap
+greetMap,
 }
 }

@@ -75,10 +75,10 @@ var submitForm =function(){
             setCounter();
             clearBox();
         } else {
-            displayName.innerHTML = ('Please choose your language first');
+            displayName.innerHTML = ('Please Choose Your Language First');
         }
     } else {
-        displayName.innerHTML = 'Please type in a valid name first';
+        displayName.innerHTML = 'Please Type In Name To Proceed';
 
     }
         return false;
