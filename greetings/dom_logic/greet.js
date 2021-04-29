@@ -26,6 +26,7 @@ if (localStorage['counter'] === undefined) {
        localLogic = localStorage.setItem('counter', JSON.stringify(0));
 }
 
+//an instance of the greet Factory
 var greet = greetFactory();
 
 greet.setlocal(JSON.parse(localStorage.getItem('userMap')))
