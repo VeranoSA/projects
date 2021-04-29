@@ -20,16 +20,32 @@ describe('The Greet with factory function' , function(){
         assert.equal('Hello Ncebakazi!!!', greetFunc.greetNow("nceBaKazi", "English"));
         
     });
-    it('Should not increase the counter if the name has been greeted', function () {
-        let greetFunc = greetFactory({});
+
+    it('Should increment counter for each different name greeted', function () {
+        let greetFunc = greetFactory();
         greetFunc.greetNow('Tebogo','English');
-        var countGreet1 = JSON.parse(localStorage.getItem('count'));
+        greetFunc.greetNow('Ncebakazi','Zulu');
+        greetFunc.greetNow('Unalo','Xhosa');
+       
+        assert.equal(3,greetFunc.getCounter());
+    });
+  
+    it('Should not increment counter if the name has been greeted even if you greet in different language', function () {
+        let greetFunc = greetFactory();
+        greetFunc.greetNow('Tebogo','English');
         greetFunc.greetNow('Tebogo','Zulu');
-        var countGreet2 = JSON.parse(localStorage.getItem('count'));
-        
-        
-        
-        assert.equal(countGreet1,countGreet2);
+        greetFunc.greetNow('Tebogo','Xhosa');
+        greetFunc.greetNow('Unalo','English');
+        greetFunc.greetNow('Unalo','Zulu');
+        greetFunc.greetNow('Unalo','Xhosa');
+        greetFunc.greetNow('Mbuyi','English');
+        greetFunc.greetNow('Mbuyi','Zulu');
+        greetFunc.greetNow('Mbuyi','Xhosa');
+        greetFunc.greetNow('Pholisa','English');
+        greetFunc.greetNow('Pholisa','Zulu');
+        greetFunc.greetNow('Pholisa','Xhosa');
+       
+        assert.equal(4,greetFunc.getCounter());
     });
 
     });

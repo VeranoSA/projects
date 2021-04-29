@@ -1,4 +1,19 @@
-function greetFactory(greetMap){
+function greetFactory(){
+
+    var local = {}
+    var counter = 0
+
+    function setlocal(name){
+        local = name
+    }
+
+    function getlocal(){
+        return local
+    }
+
+    function getCounter(){
+        return counter
+    }
 
 function greetNow(nameInput, language){
 
@@ -9,16 +24,19 @@ function greetNow(nameInput, language){
     nameInput = firstChar+str;
 
      //counter initialize
-     if (localStorage['counter'] === undefined) {
-    //local storage can only store strings so convert to store object or arrays
-        localStorage.setItem('counter', JSON.stringify(0));
-    }
+    //  if (localStorage['counter'] === undefined) {
+    // //local storage can only store strings so convert to store object or arrays
+    //     localStorage.setItem('counter', JSON.stringify(0));
+    // }
 
-    if (greetMap[nameInput] === undefined) {
-        greetMap[nameInput] = 0;
-        var counter = JSON.parse(localStorage.getItem('counter'));
-        //increament to the counter if the user has not been registered to the map
-        localStorage.setItem('counter', JSON.parse(counter + 1));
+    if (local[nameInput] === undefined) {
+        local[nameInput] = 0;
+        counter++
+        // var counter = JSON.parse(localStorage.getItem('counter'));
+        // //increament to the counter if the user has not been registered to the map
+        // localStorage.setItem('counter', JSON.parse(counter + 1));
+    } else{
+        local[nameInput]++;
     }
     //return greeting based on selected language
     if(language === "English"){
@@ -51,7 +69,10 @@ function greetNow(nameInput, language){
 
 return {
 greetNow,
+setlocal,
 setLang,
-greetMap,
+getlocal,
+// greetMap,
+getCounter
 }
 }

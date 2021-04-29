@@ -18,6 +18,18 @@ var greetBtn = document.querySelector('#greetBtn');
 var resetBtn = document.querySelector('#resetBtn');
 
 var displayCount = document.querySelector('#countNumber');
+
+var localLogic = {}
+
+if (localStorage['counter'] === undefined) {
+    //local storage can only store strings so convert to store object or arrays
+       localLogic = localStorage.setItem('counter', JSON.stringify(0));
+}
+
+var greet = greetFactory();
+
+greet.setlocal(JSON.parse(localStorage.getItem('userMap')))
+
 //get the name of the user from the textbox 
 var getName = function () {
     var name = getInput.value;
@@ -36,30 +48,30 @@ var clearBox = function () {
 //display the total counts of greetings
 var setCounter = function () {
 
-    displayCount.innerHTML = localStorage.getItem('counter');
+    displayCount.innerHTML = Object.keys(greet.getlocal()).length;
 }
 setCounter();
 
-var checkCounter = function () {
-    //counter init 
-   if (localStorage['counter'] === undefined) {
-       localStorage.setItem('counter', JSON.stringify(0));
-   }
+// var checkCounter = function () {
+//     //counter init 
+//    if (localStorage['counter'] === undefined) {
+//        localStorage.setItem('counter', JSON.stringify(0));
+//    }
 
-}
+// }
 
 //a function to create a map if there's no map in the local storage
-var checkMap = function () {
-    if (!localStorage.getItem('userMap')) {
-        localStorage.setItem('userMap', JSON.stringify({}));
-    }
-}
+// var checkMap = function () {
+//     if (!localStorage.getItem('userMap')) {
+//         localStorage.setItem('userMap', JSON.stringify({}));
+//     }
+// }
 
 
 var submitForm =function(){
-    checkMap();
+    // checkMap();
     //an instance of the greet Factory
-    var greet = greetFactory(JSON.parse(localStorage.getItem('userMap')));
+    // var greet = greetFactory(JSON.parse(localStorage.getItem('userMap')));
 
     var radioBtn = document.querySelector('input[name="radioLang"]:checked');
     var nameFromDom = getName().name;
@@ -67,11 +79,14 @@ var submitForm =function(){
     //ensure theres no empty name and there is a checked radio button
     if (nameFromDom){
         if (radioBtn !== null) {
+            console.log(Object.keys(localLogic).length)
             //getName();
             var langFromDom = greet.setLang(radioBtn.value);
-            checkCounter();
+            // checkCounter();
             displayName.innerHTML = greet.greetNow(nameFromDom, langFromDom);
-            localStorage.setItem('userMap', JSON.stringify(greet.greetMap));
+            console.log(greet.getlocal())
+
+            localStorage.setItem('userMap', JSON.stringify(greet.getlocal()));
             setCounter();
             clearBox();
         } else {
