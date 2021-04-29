@@ -35,7 +35,8 @@ function greetNow(nameInput, language){
         // var counter = JSON.parse(localStorage.getItem('counter'));
         // //increament to the counter if the user has not been registered to the map
         // localStorage.setItem('counter', JSON.parse(counter + 1));
-    } else{
+    } 
+    else{
         local[nameInput]++;
     }
     //return greeting based on selected language

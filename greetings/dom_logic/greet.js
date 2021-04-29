@@ -21,15 +21,14 @@ var displayCount = document.querySelector('#countNumber');
 
 var localLogic = {}
 
-if (localStorage['counter'] === undefined) {
+if (localStorage['userMap']) {
     //local storage can only store strings so convert to store object or arrays
-       localLogic = localStorage.setItem('counter', JSON.stringify(0));
+       localLogic = JSON.parse(localStorage['userMap']);
 }
 
-//an instance of the greet Factory
 var greet = greetFactory();
 
-greet.setlocal(JSON.parse(localStorage.getItem('userMap')))
+greet.setlocal(localLogic)
 
 //get the name of the user from the textbox 
 var getName = function () {
@@ -104,8 +103,9 @@ var submitForm =function(){
 //Event listener for the reset button
 
 resetBtn.addEventListener('click', function run() {
-    localStorage.setItem('counter', JSON.stringify(0));
-    localStorage.setItem('userMap', JSON.stringify({}));
-    displayCount.innerHTML = 0;
+    // localStorage.setItem('counter', JSON.stringify(0));
+    // localStorage.setItem('userMap', JSON.stringify({}));
+    localStorage.clear()
+    location.reload()
     displayName.innerHTML = 'Please Enter Your Name';
 });
