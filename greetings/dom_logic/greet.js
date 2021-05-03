@@ -11,12 +11,8 @@
 //adding querySelectors and refs
 
 var displayName = document.querySelector('#displayName');
-
 var getInput = document.querySelector('#inputBox');
-
-//var greetBtn = document.querySelector('#greetBtn');
 var resetBtn = document.querySelector('#resetBtn');
-
 var displayCount = document.querySelector('#countNumber');
 
 //Holds local storage
