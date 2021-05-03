@@ -1,12 +1,12 @@
 function greetFactory(){
-
+//Holding local storage
     var local = {}
     var counter = 0
-
+//Setting the local object by passing the local storage
     function setlocal(name){
         local = name
     }
-
+//Getting the local object
     function getlocal(){
         return local
     }
@@ -22,20 +22,13 @@ function greetNow(nameInput, language){
     let str = nameInput.substr(1, nameInput.length);
     let firstChar = nameInput.charAt(0).toUpperCase();
     nameInput = firstChar+str;
-
-     //counter initialize
-    //  if (localStorage['counter'] === undefined) {
-    // //local storage can only store strings so convert to store object or arrays
-    //     localStorage.setItem('counter', JSON.stringify(0));
-    // }
-
+// Check if the name is there, if the name is not there its going to push the name to the object
     if (local[nameInput] === undefined) {
         local[nameInput] = 0;
         counter++
-        // var counter = JSON.parse(localStorage.getItem('counter'));
-        // //increament to the counter if the user has not been registered to the map
-        // localStorage.setItem('counter', JSON.parse(counter + 1));
+    
     } 
+    //If the name is there just increment the value
     else{
         local[nameInput]++;
     }

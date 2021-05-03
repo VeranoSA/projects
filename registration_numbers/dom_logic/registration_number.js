@@ -11,6 +11,7 @@
 //adding querySelectors and refs
 
 var displayName = document.querySelector('#displayName');
+var welcomeText = document.querySelector('#p1')
 
 var getInput = document.querySelector('#inputBox');
 
@@ -80,6 +81,16 @@ var submitForm =function(){
 
     }
         return false;
+}
+
+
+// close the div in 5 secs
+window.setTimeout("closeDiv();", 10000);
+function closeDiv()
+{
+    var Temp = document.getElementById("p1")
+    if (Temp != null)
+        Temp.style.display = "none";
 }
     // ======================EVENTS==============================
 
