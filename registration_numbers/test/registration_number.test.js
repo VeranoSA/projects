@@ -39,9 +39,32 @@ describe('Registration_Numbers with factory function' , function(){
     it('should be able to return registration number to Capital letters if entered with small letters ', function(){
         let regFunc = regFactory({});
         assert.equal('CA 123 123', regFunc.regNumber("ca", "123 123"));
+        assert.equal('CY 123 123', regFunc.regNumber("cy", "123 123"));
+        assert.equal('CL 123 123', regFunc.regNumber("cl", "123 123"));
+        assert.equal('CJ 123 123', regFunc.regNumber("cj", "123 123"));
+
 
     });
+    describe('Registration number incrementation' , function(){
+        it('Should be able to add new registration each time when its enterd', function(){
+        let regFunc = regFactory({});
+        regFunc.regNumber("CA", "123-123");
+        regFunc.regNumber("CY", "125-123");
+        regFunc.regNumber("CL", "167-129");
+        regFunc.regNumber("CJ", "346-543");
+        assert.equal(4, regFunc.getCounter());
     
+});
+        it('Should not new able to enter new registration each time when its enterd', function(){
+        let regFunc = regFactory({});
+        regFunc.regNumber("CA", "555 555");
+        regFunc.regNumber("CA", "555 555");
+        regFunc.regNumber("CL", "333 333");
+        regFunc.regNumber("CL", "333 333");
+        assert.equal(2, regFunc.getCounter());
+
+});
+});
 });
 });
 });
