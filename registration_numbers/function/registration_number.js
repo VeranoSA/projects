@@ -2,7 +2,6 @@ function regFactory(){
 //Holding local storage
     //var local = {}
     //var counter = 0
-    var regStorage = []
 //Setting the local object by passing the local storage
     //function setlocal(name){
         //local = name
@@ -16,27 +15,33 @@ function regFactory(){
         //return counter
     //}
 
-function regNumber(reg){
+function regNumber(regStart, numbers){
 
     //Name format fix & Make first letter of name UpperCase
-    //reg = reg.toLowerCase();
-        //let str = reg.substr(1, reg.length);
-        //let str2 = reg.substr(2, reg);
+    regStart = regStart.toUpperCase();
+if(regStart === "CA"){
 
-        //let firstChar = reg.charAt(0).toUpperCase();
-        //let secondChar = reg.charAt(1).toUpperCase();
-        //reg = firstChar+ secondChar+ str
+    return regStart +" "+ numbers
+}
+if(regStart === "CJ"){
 
-    if (reg.startsWith("CA") || reg.startsWith("CL") || reg.startsWith("CY") || reg.startsWith("CJ")){
-        regStorage.push(reg)
-    }
-    return regStorage
+    return regStart +" "+ numbers
+}
+if(regStart === "CY"){
+
+    return regStart +" "+ numbers
+}
+if(regStart === "CL"){
+
+    return regStart +" "+ numbers
+}
+
+    
 // Check if the name is there, if the name is not there its going to push the name to the object
     //if (local[nameInput] === undefined) {
      //   local[nameInput] = 0;
      //   counter++
     
-   // } 
     //If the name is there just increment the value
     //else{
     //    local[nameInput]++;
@@ -56,19 +61,19 @@ function regNumber(reg){
     //}
 }
  //function that returns the checked language button 
- var setLang = function (value) {
-    var lang = '';
-    if (value === 'English') {
-        lang = 'English';
-    }
-    if (value === 'Zulu') {
-        lang = 'Zulu';
-    }
-    if (value === 'Tsonga') {
-        lang = 'Tsonga';
-    }
-    return lang
-}
+ //var setLang = function (value) {
+  //  var lang = '';
+   // if (value === 'English') {
+      //  lang = 'English';
+   // }
+    //if (value === 'Zulu') {
+        //lang = 'Zulu';
+    //}
+    //if (value === 'Tsonga') {
+     //   lang = 'Tsonga';
+    //}
+    //return lang
+//}
 
 return {
 regNumber,
