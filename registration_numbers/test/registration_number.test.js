@@ -26,7 +26,7 @@ describe('Registration_Numbers with factory function' , function(){
         assert.equal('CY 123-123', regFunc.regNumber("CY", "123-123"));
 
     });
-    it('should be able to return registration number with "whiteSpace between 2 equal numbers" special case', function(){
+    it('should be able to return registration number with whiteSpace between 2 equal numbers', function(){
         let regFunc = regFactory({});
         assert.equal('CA 123 123', regFunc.regNumber("CA", "123 123"));
 
@@ -55,7 +55,7 @@ describe('Registration_Numbers with factory function' , function(){
         assert.equal(4, regFunc.getCounter());
     
 });
-        it('Should not new able to enter new registration each time when its enterd', function(){
+        it('Should not be able to enter new registration each time when its enterd', function(){
         let regFunc = regFactory({});
         regFunc.regNumber("CA", "555 555");
         regFunc.regNumber("CA", "555 555");
