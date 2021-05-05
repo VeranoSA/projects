@@ -55,7 +55,7 @@ describe('Registration_Numbers with factory function' , function(){
         assert.equal(4, regFunc.getCounter());
     
 });
-        it('Should not be able to enter new registration each time when its enterd', function(){
+        it('Should not be able to enter new registration if it was enterd', function(){
         let regFunc = regFactory({});
         regFunc.regNumber("CA", "555 555");
         regFunc.regNumber("CA", "555 555");
