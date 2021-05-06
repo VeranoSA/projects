@@ -14,15 +14,26 @@ function regFactory(){
     function getCounter(){
         return counter
     }
+//regex validation
 
 function regNumber(regStart, numbers){
 
 //Name format fix & Make first letter of name UpperCase
-regStart = regStart.toUpperCase();
-
+var regEntered = regStart +" "+ numbers;
+regEntered = regEntered.toUpperCase();
+//regex validation
+var regex = /^((CA|CJ|CY|CL)\s\d{3}\-\d{3})$|^((CA|CJ|CY|CL)\s\d{3}\d{3})$|^((CA|CJ|CY|CL)\s\d{3}\s\d{3})$/;
+var testing = regex.test(regEntered)
+if (testing === regex){
+    return regEntered;
+}
+if(!testing === regex)
+{
+    return false
+}
 // Check if the registration is there, if the registration is not there its going to push the name to the object
-if (local[regStart, numbers] === undefined) {
-        local[regStart, numbers] = 0;
+if (local[regEntered] === undefined) {
+        local[regEntered] = 0;
          counter++
     }
 //If the registration is there just increment the value
@@ -64,11 +75,8 @@ if(regStart === "CL"){
 
 return {
 regNumber,
-//greetNow,
 setlocal,
-//setLang,
 getlocal,
-// greetMap,
 getCounter
 }
 }
