@@ -21,16 +21,9 @@ function regNumber(regStart, numbers){
 //Name format fix & Make first letter of name UpperCase
 var regEntered = regStart +" "+ numbers;
 regEntered = regEntered.toUpperCase();
-//regex validation
 var regex = /^((CA|CJ|CY|CL)\s\d{3}\-\d{3})$|^((CA|CJ|CY|CL)\s\d{3}\d{3})$|^((CA|CJ|CY|CL)\s\d{3}\s\d{3})$/;
 var testing = regex.test(regEntered)
-if (testing === regex){
-    return regEntered;
-}
-if(!testing === regex)
-{
-    return false
-}
+
 // Check if the registration is there, if the registration is not there its going to push the name to the object
 if (local[regEntered] === undefined) {
         local[regEntered] = 0;
@@ -38,41 +31,17 @@ if (local[regEntered] === undefined) {
     }
 //If the registration is there just increment the value
      else{
-       local[regStart, numbers]++;
+       local[regEntered]++;
     }
-if(regStart === "CA"){
-
-    return regStart +" "+ numbers
+//regex validation
+if (testing){
+        return regEntered;
+    }
+    if(!testing)
+    {
+        return false
+    }
 }
-if(regStart === "CJ"){
-
-    return regStart +" "+ numbers
-}
-if(regStart === "CY"){
-
-    return regStart +" "+ numbers
-}
-if(regStart === "CL"){
-
-    return regStart +" "+ numbers
-}
-}   
-
- //function that returns the checked language button 
- //var setLang = function (value) {
-  //  var lang = '';
-   // if (value === 'English') {
-      //  lang = 'English';
-   // }
-    //if (value === 'Zulu') {
-        //lang = 'Zulu';
-    //}
-    //if (value === 'Tsonga') {
-     //   lang = 'Tsonga';
-    //}
-    //return lang
-//}
-
 return {
 regNumber,
 setlocal,
