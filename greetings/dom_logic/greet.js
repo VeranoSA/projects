@@ -63,7 +63,7 @@ var submitForm =function(){
             var langFromDom = greet.setLang(radioBtn.value);
             // checkCounter();
             displayName.innerHTML = greet.greetNow(nameFromDom, langFromDom);
-            console.log('greet.getlocal()')
+            console.log(greet.getlocal())
 
             localStorage.setItem('userMap', JSON.stringify(greet.getlocal()));
             setCounter();
@@ -81,7 +81,7 @@ var submitForm =function(){
 
 //Event listener for the reset button
 
-resetBtn.addEventListener('click', function run() {
+resetBtn.addEventListener('click', function() {
     localStorage.clear()
     location.reload()
 });

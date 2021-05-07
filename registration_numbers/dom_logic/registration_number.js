@@ -15,7 +15,7 @@ var welcomeText = document.querySelector('#p1')
 
 var getInput = document.querySelector('#inputBox');
 
-//var greetBtn = document.querySelector('#greetBtn');
+//var addBtn = document.querySelector('#addBtn');
 var resetBtn = document.querySelector('#resetBtn');
 
 var displayCount = document.querySelector('#countNumber');
@@ -24,15 +24,15 @@ var displayCount = document.querySelector('#countNumber');
 var localLogic = {}
 
 //We are retriving infomation from the local storage
-if (localStorage['userMap']) {
-       localLogic = JSON.parse(localStorage['userMap']);
+if (localStorage['regMap']) {
+       localLogic = localStorage['regMap'];
 }
-//an instance of the greet Factory
-var greet = greetFactory();
+//an instance of the reg Factory
+var reg = regFactory();
 //Setting the local storage to the logic function
-greet.setlocal(localLogic)
+reg.setlocal(localLogic)
 
-//get the name of the user from the textbox 
+//get the registration from the textbox 
 var getName = function () {
     var name = getInput.value;
 
@@ -46,38 +46,32 @@ var clearBox = function () {
     getInput.value = "";
 }
 
-//display the total counts of greetings counting the keys
+//display the total counts of regings counting the keys
 var setCounter = function () {
 
-    displayCount.innerHTML = Object.keys(greet.getlocal()).length;
+    displayCount.innerHTML = Object.keys(reg.getlocal());
 }
 setCounter();
 
 var submitForm =function(){
 
-    var radioBtn = document.querySelector('input[name="radioLang"]:checked');
+    //var radioBtn = document.querySelector('input[name="radioLang"]:checked');
     var nameFromDom = getName().name;
     //console.log('type of name from DOM : '+typeof(parseFloat(nameFromDom)));
     
     console.log(nameFromDom)
     //ensure theres no empty name and there is a checked radio button
     if (nameFromDom){
-        if (radioBtn !== null) {
-            // cons÷ole.log(Object.keys(localLogic).length)
-            //getName();
-            var langFromDom = greet.setLang(radioBtn.value);
-            // checkCounter();
-            displayName.innerHTML = greet.greetNow(nameFromDom, langFromDom);
-            console.log('greet.getlocal()')
 
-            localStorage.setItem('userMap', JSON.stringify(greet.getlocal()));
+            displayName.innerHTML = reg.regNumber(nameFromDom);
+            console.log(reg.getlocal());
+
+            localStorage.setItem('regMap', JSON.stringify(reg.getlocal()));
             setCounter();
             clearBox();
-        } else {
-            displayName.innerHTML = ('Please Choose Your Language First');
-        }
+    
     } else {
-        displayName.innerHTML = 'Please Type In Name To Proceed';
+        displayName.innerHTML = 'Please Type In Registration To Proceed';
 
     }
         return false;
@@ -85,7 +79,7 @@ var submitForm =function(){
 
 
 // close the div in 5 secs
-window.setTimeout("closeDiv();", 10000);
+window.setTimeout("closeDiv();", 15000);
 function closeDiv()
 {
     var Temp = document.getElementById("p1")
@@ -96,7 +90,7 @@ function closeDiv()
 
 //Event listener for the reset button
 
-resetBtn.addEventListener('click', function run() {
+resetBtn.addEventListener('click', function() {
     localStorage.clear()
     location.reload()
 });

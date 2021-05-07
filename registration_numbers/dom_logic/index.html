@@ -26,8 +26,7 @@
 
         <div class="col-6 center">
             <form id="form1" action="" onsubmit="return submitForm();">
-                <input id="inputBox" type="console.text" placeholder="Type in registration number here" pattern="[a-zA-Z]+" title="Please enter only letters A-Z">
-
+                <input id="inputBox" type="console.text" placeholder="Format: CA 123 123 or CA 123-123 or CA 123123" pattern="([a-zA-Z]{2} [0-9]{3}-[0-9]{3})|([a-zA-Z]{2} [0-9]{3} [0-9]{3})|([a-zA-Z]{2} [0-9]{3}[0-9]{3})" title="Please enter plates from CA/CJ/CY/CL" >
             </form>
         </div>
         <div class="col-3"></div>
@@ -54,14 +53,14 @@
         <div class="col-6" id="counterAndResetBox">
             <p class="">
                 <strong>Registration Number: &nbsp;
-                    <span id="countNumber">0</span>
+                    <span id="countNumber">No Reg-Number Registerd Yet</span>
                 </strong>
             </p> 
             <button id="resetBtn">Reset</button>
         </div>
-        <div class="col-6" id="greetBox">
-            <!-- <button id="greetBtn" type="submit" form="form1" value="Submit">
-                <strong>Greet!</strong>
+        <div class="col-6" id="addBox">
+            <!-- <button id="addBtn" type="submit" form="form1" value="Submit">
+                <strong>reg!</strong>
             </button> -->
 
         </div>
@@ -69,13 +68,13 @@
 
     </div>
     <div class="row center">
-        <div class="col-12 center" id="greetBox">
-            <button id="greetBtn" type="submit" form="form1" value="Submit">
+        <div class="col-12 center" id="addBox">
+            <button id="addBtn" type="submit" form="form1" value="Submit">
                 <strong>ADD</strong>
             </button>
         </div>
-        <div class="col-12 center" id="greetBox">
-            <button id="greetBtn" type="submit" form="form1" value="Submit">
+        <div class="col-12 center" id="addBox">
+            <button id="addBtn" type="submit" form="form1" value="Submit">
                 <strong>SHOW</strong>
             </button>
         </div>

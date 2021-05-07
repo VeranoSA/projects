@@ -286,7 +286,7 @@ p {
         background-color: black;
     }
 */
-    #greetBtn {
+    #addBtn {
         border: 2px solid darkslategray;
         width: 230px;
         height: 60px;
@@ -341,13 +341,13 @@ button {
     border-radius: 25px;
 }
 
-#greetBtn {
+#addBtn {
     position: relative;
     bottom: 108px;
     right: 19px;
 }
 
-#greetBtn:hover {
+#addBtn:hover {
     background-color:rgba(210,105,30);
 }
 
