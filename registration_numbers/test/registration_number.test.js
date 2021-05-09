@@ -2,7 +2,7 @@ describe('Registration_Numbers with factory function' , function(){
     describe('Should display only registration numbers from CAPE TOWN,PAARL,BELVILLE,STELLENBOSCH' , function(){
     it('should be able to return registration numbers from Cape Town', function(){
         let regFunc = regFactory({});
-        assert.equal("CA 123 123", regFunc.regNumber('CA', '123 123'));
+        assert.equal(true, regFunc.regNumber('CA 123 123'));
         
     });
     it('should be able to return registration number from Paarl', function(){

@@ -210,11 +210,15 @@ p {
         position: relative;
         top: 1px;
     }
+    #showBtn {
+        position: relative;
+        top: 1px;
+    }
     #addBox {
         position: relative;
         bottom: 110px;
     }
-    #showBtn {
+    #showAll {
         position: relative;
         top: 1px;
     }
@@ -294,6 +298,25 @@ p {
         /* background: #333447; */
         border-radius: 25px;
     }
+
+    #showBtn {
+        border: 2px solid darkslategray;
+        width: 230px;
+        height: 60px;
+        background-color: white;
+        /* background: #333447; */
+        border-radius: 25px;
+    }
+
+    #showAll {
+        border: 2px solid darkslategray;
+        width: 230px;
+        height: 60px;
+        background-color: white;
+        /* background: #333447; */
+        border-radius: 25px;
+    }
+
     #counterAndResetBox {
         position: relative;
         right: 140px;
@@ -351,9 +374,31 @@ button {
     background-color:rgba(210,105,30);
 }
 
+#showBtn {
+    position: relative;
+    bottom: 108px;
+    right: 19px;
+}
+
+#showAll {
+    position: relative;
+    bottom: 108px;
+    right: 19px;
+}
+
+
+#showBtn:hover {
+    background-color:rgba(210,105,30);
+}
+
 #resetBtn:hover {
     background-color:rgba(210,105,30);
 }
+
+#showAll:hover {
+    background-color:rgba(210,105,30);
+}
+
 
 button:focus,
 button:active {
@@ -408,4 +453,11 @@ button:active {
 .radio-toolbar input[type="radio"]:checked+label {
     background-color: rgb(5, 169, 172);
     border-color: black;
+}
+
+.btn-styled {
+    font-size: 14px;
+    margin: 8px;
+    padding: 0 10px;
+    line-height: 2;
 }
