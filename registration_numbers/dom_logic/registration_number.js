@@ -47,7 +47,7 @@ reg.setlocal(localLogic)
 //get the registration from the textbox 
 var getName = function () {
     var name = getInput.value;
-
+    name = name.toUpperCase();
     return {
         name
     }
@@ -100,11 +100,11 @@ var submitForm = function () {
 function showRequestMessage() {
     setInterval(function showMeesageDiv() {
         displayName.innerHTML = 'Please Enter Registration Number';
-    }, 3000); // after 5 secs
+    }, 4000); // after 5 secs
 }
 
 // close the div in 5 secs
-window.setTimeout("closeDiv();", 15000);
+window.setTimeout("closeDiv();", 20000);
 function closeDiv() {
     var Temp = document.getElementById("p1")
     if (Temp != null)

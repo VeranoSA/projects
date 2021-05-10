@@ -15,7 +15,7 @@
 
 
             <p>Hello and welcome!Enter your registration number in the textbox below ,hit ADD to ADD registration
-                number! Choose a town and click on SHOW to see all registration numbers from that area.</p>
+                number! Choose a town and click on SHOW to see all registration numbers from that area. Click show to see all plates registerd</p>
         </div>
     </div>
     <div class="row center">
@@ -31,7 +31,7 @@
             <form id="form1" action="" onsubmit="return submitForm();">
                 <input id="inputBox" type="console.text" placeholder="Format: CA 123 123 or CA 123-123 or CA 123123"
                     pattern="([a-zA-Z]{2} [0-9]{3}-[0-9]{3})|([a-zA-Z]{2} [0-9]{3} [0-9]{3})|([a-zA-Z]{2} [0-9]{3}[0-9]{3})"
-                    title="Please enter plates from CA/CJ/CY/CL">
+                    title="Enter plates from CA/CJ/CY/CL only and should not exceeds 10 characters">
             </form>
         </div>
         <div class="col-3"></div>
@@ -81,15 +81,20 @@
         <div class="col-12 center" id="addBox">
             <button id="showBtn" type="submit">
                 <strong>SHOW</strong>
-            </button>
-            <button id="showAll" type="submit">
-                <strong>SHOW ALL</strong>
-            </button>
+            </button> 
         </div>
-    </div>
+        <div class="col-12 center" id="addBox">
+        <button id="showAll" type="submit">
+            <strong>SHOW ALL</strong>
+        </button>
+        </div>
+</div> 
+    <fieldset>
+        <legend>Registration Numbers List</legend>
     <div id="container">
         <div id="dvTable"></div>
     </div>
+    </fieldset>
 
 </body>
 <script src="../function/registration_number.js"></script>
