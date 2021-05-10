@@ -14,9 +14,8 @@ function regFactory() {
     function getCounter() {
         return counter
     }
-    //regex validation
 
-    function regNumber(regStart, numbers) {
+    function regNumber(regStart) {
 
         //Name format fix & Make first letter of name UpperCase
         var regEntered = regStart;
