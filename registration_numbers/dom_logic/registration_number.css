@@ -290,34 +290,35 @@ p {
         background-color: black;
     }
 */
+/*
     #addBtn {
         border: 2px solid darkslategray;
         width: 230px;
         height: 60px;
         background-color: white;
         /* background: #333447; */
-        border-radius: 25px;
-    }
+       /* border-radius: 25px;*/
+/* }*/
 
-    #showBtn {
+/*    #showBtn {
         border: 2px solid darkslategray;
         width: 230px;
         height: 60px;
         background-color: white;
         /* background: #333447; */
-        border-radius: 25px;
-    }
+        /*border-radius: 25px;*/
+/*    }*/
 
-    #showAll {
+/*    #showAll {
         border: 2px solid darkslategray;
         width: 230px;
         height: 60px;
         background-color: white;
         /* background: #333447; */
-        border-radius: 25px;
-    }
+       
+/*    }*/
 
-    #counterAndResetBox {
+   #counterAndResetBox {
         position: relative;
         right: 140px;
         bottom: 173px;

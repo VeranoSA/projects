@@ -110,16 +110,17 @@ var submitForm = function () {
 function showRequestMessage() {
     setInterval(function showMeesageDiv() {
         displayName.innerHTML = 'Please Enter Registration Number';
-    }, 4000); // after 5 secs
+    }, 4000);
 }
 
-// close the div in 5 secs
+/** close the div in 5 secs
 window.setTimeout("closeDiv();", 20000);
 function closeDiv() {
     var Temp = document.getElementById("p1")
     if (Temp != null)
         Temp.style.display = "none";
 }
+*/
 // ======================EVENTS==============================
 
 //Event listener for the reset button
@@ -188,13 +189,15 @@ function RemoveHtmlElement() {
 
 /**
  * This even listener executes the display of all the registration numbers by town
- */
+*/
 showBtn.addEventListener('click', function () {
     var radioBtn = document.querySelector('input[name="radioTown"]:checked');
     if (radioBtn !== null) {
         displayNumberPlateByTown(radioBtn.value);
     }
+    
 });
+
 
 /**
  * This event listener handles the display of all the number plates persisted in the local storage
