@@ -6,6 +6,16 @@
 //Parse the data with JSON.parse(), and the data becomes a JavaScript object.
 //JSON.stringify() - When sending data to a web server, the data has to be a string.
 //Convert a JavaScript object into a string
+//setTimeOut - method calls a function or evaluates an expression 
+//after a specified number of milliseconds. Can only excecute once.
+//setInterval - The function is only executed once. If you need to 
+//repeat execution, use the setInterval() method.
+//appendChild() method appends a node as the last child of a node.
+//The removeChild() method removes a specified child node of the specified element.
+//The getElementById() method returns the element that has the ID attribute with the specified value.
+//This method is one of the most common methods in the HTML DOM, and is used almost every time you want to manipulate,
+//or get info from, an element on your document.
+//The filter() method creates an array filled with all array elements that pass a test (provided as a function).
 
 
 //adding querySelectors and refs
