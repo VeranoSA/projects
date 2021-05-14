@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./registration_number.css">
+      <title>Document</title>
+   </head>
+   <body>
+      <div class="row center">
+         <div class="col-12" id="p1">
+            <p>Hello and welcome!Enter your registration number in the textbox below ,click ADD to add registration
+               number! Choose a town and click on SHOW to see all registration numbers from that area. Click SHOW ALL to see all plates registerd.
+            </p>
+         </div>
+      </div>
+      <!---Separation--->
+      <div class ="row center">
+      <div class ="col-6 center">
+         <div class="row center">
+            <div class="col-12">
+               <h1 id="displayName">Please enter registration number</h1>
+            </div>
+         </div>
+         <div class="row center">
+            <div class="col-3"></div>
+            <div class="col-6 center">
+               <form id="form1" action="" onsubmit="return submitForm();">
+                  <input id="inputBox" type="console.text" placeholder="Format: CA 123 123 or CA 123-123 or CA 123123"
+                     pattern="([a-zA-Z]{2} [0-9]{3}-[0-9]{3})|([a-zA-Z]{2} [0-9]{3} [0-9]{3})|([a-zA-Z]{2} [0-9]{3}[0-9]{3})"
+                     title="Enter plates from CA/CJ/CY/CL only and should not exceeds 10 characters">
+               </form>
+            </div>
+            <div class="col-3"></div>
+         </div>
+         <div class="row center">
+            <!--            <div class="col-4"></div>-->
+            <div class=" col-12 radio-toolbar">
+               <input type="radio" name="radioTown" value="CA" id="1" >
+               <label for="1"> Cape Town</label>
+               <input type="radio" name="radioTown" value="CJ" id="2" >
+               <label for="2">Paarl</label>
+               <input type="radio" name="radioTown" value="CY" id="3" >
+               <label for="3">Bellville</label>
+               <input type="radio" name="radioTown" value="CL" id="4" >
+               <label for="4">Stellenbosch</label>
+            </div>
+            <!--            <div class="col-4"></div>-->
+         </div>
+         <div class="row center ">
+            <div class="col-6" id="counterAndResetBox">
+               <p class="">
+                  <strong>
+                     Click Reset To Clear Plate Register: &nbsp;
+                     <!-- <span id="countNumber">No Reg-Number Registerd Yet</span> -->
+                  </strong>
+               </p>
+               <button id="resetBtn">Reset</button>
+            </div>
+            <div class="col-6" id="addBox">
+               <!-- <button id="addBtn" type="submit" form="form1" value="Submit">
+                  <strong>reg!</strong>
+                  </button> -->
+            </div>
+         </div>
+         <div class="row center">
+            <button id="addBtn" type="submit" form="form1" value="Submit">
+            <strong>ADD</strong>
+            </button>
+            <button id="showBtn" type="submit">
+            <strong>SHOW</strong>
+            </button>
+            <button id="showAll" type="submit">
+            <strong>SHOW ALL</strong>
+            </button>
+         </div>
+         <fieldset>
+            <legend>Registration Numbers List</legend>
+            <div id="container">
+               <div id="dvTable"></div>
+            </div>
+         </fieldset>
+      </div>
+      <!--END OF SEPARATION-->
+      <!--NEW BEGINNING SEPARATION-->
+      <div class="col-6 center">
+         <div class="row center">
+            <div class="col-12">
+               <h1 id="displayName">Please enter registration number</h1>
+            </div>
+         </div>
+         <div class="row center">
+            <div class="col-3"></div>
+            <div class="col-6 center">
+               <form id="form1" action="" onsubmit="return submitForm();">
+                  <input id="inputBox" type="console.text" placeholder="Format: CA 123 123 or CA 123-123 or CA 123123"
+                     pattern="([a-zA-Z]{2} [0-9]{3}-[0-9]{3})|([a-zA-Z]{2} [0-9]{3} [0-9]{3})|([a-zA-Z]{2} [0-9]{3}[0-9]{3})"
+                     title="Enter plates from CA/CJ/CY/CL only and should not exceeds 10 characters">
+               </form>
+            </div>
+            <div class="col-3"></div>
+         </div>
+         <div class="row center">
+            <!--            <div class="col-4"></div>-->
+            <div class=" col-12 radio-toolbar">
+               <input type="radio" name="radioTown" value="CA" id="1" >
+               <label for="1"> Cape Town</label>
+               <input type="radio" name="radioTown" value="CJ" id="2" >
+               <label for="2">Paarl</label>
+               <input type="radio" name="radioTown" value="CY" id="3" >
+               <label for="3">Bellville</label>
+               <input type="radio" name="radioTown" value="CL" id="4" >
+               <label for="4">Stellenbosch</label>
+            </div>
+            <!--            <div class="col-4"></div>-->
+         </div>
+         <div class="row center ">
+            <div class="col-6" id="counterAndResetBox">
+               <p class="">
+                  <strong>
+                     Click Reset To Clear Plate Register: &nbsp;
+                     <!-- <span id="countNumber">No Reg-Number Registerd Yet</span> -->
+                  </strong>
+               </p>
+               <button id="resetBtn">Reset</button>
+            </div>
+            <div class="col-6" id="addBox">
+               <!-- <button id="addBtn" type="submit" form="form1" value="Submit">
+                  <strong>reg!</strong>
+                  </button> -->
+            </div>
+         </div>
+         <div class="row center">
+            <button id="addBtn" type="submit" form="form1" value="Submit">
+            <strong>ADD</strong>
+            </button>
+            <button id="showBtn" type="submit">
+            <strong>SHOW</strong>
+            </button>
+            <button id="showAll" type="submit">
+            <strong>SHOW ALL</strong>
+            </button>
+         </div>
+         <fieldset>
+            <legend>Registration Numbers List</legend>
+            <div id="container">
+               <div id="dvTable"></div>
+            </div>
+         </fieldset>
+      </div>
+      <!--END OF SEPARATION-->
+      </div>
+   </body>
+   <script src="../function/registration_number.js"></script>
+   <script src="../dom_logic/registration_number.js"></script>
+</html>
