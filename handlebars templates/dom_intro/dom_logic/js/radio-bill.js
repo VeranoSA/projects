@@ -10,6 +10,7 @@ var smsTotalTwoElem = document.querySelector ('.smsTotalTwo');
 var totalTwoElem = document.querySelector ('.totalTwo');
 //get a reference to the template script tag
 var templateSource = document.querySelector(".userTemplate").innerHTML;
+// compile the template
 var template = Handlebars.compile(templateSource);
 
 
@@ -27,10 +28,14 @@ if (checkedRadioBillBtn){
     radioInst.billCalculation(billItemType);
 
     //update the totals that is displayed on the screen.
-    callTotalTwoElem.innerHTML = radioInst.getCallTotal().toFixed(2);
-    smsTotalTwoElem.innerHTML = radioInst.getSmsTotal().toFixed(2);
+    callTotalTwoElem.innerHTML = template ({
+    totalCallTemp: radioInst.getCallTotal().toFixed(2)});
 
-    totalTwoElem.innerHTML = radioInst.getTotalCost().toFixed(2);
+    smsTotalTwoElem.innerHTML = template({
+    totalSmsTemp: radioInst.getSmsTotal().toFixed(2)})
+
+    totalTwoElem.innerHTML = template({
+    totalCostTemp: radioInst.getTotalCost().toFixed(2)})
 
     totalTwoElem.classList.remove("warning");
     totalTwoElem.classList.remove("danger");
