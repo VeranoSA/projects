@@ -8,6 +8,10 @@ var callTotalTwoElem = document.querySelector ('.callTotalTwo');
 var smsTotalTwoElem = document.querySelector ('.smsTotalTwo');
 //get a reference to total should be displayed
 var totalTwoElem = document.querySelector ('.totalTwo');
+//get a reference to the template script tag
+var templateSource = document.querySelector(".userTemplate").innerHTML;
+var template = Handlebars.compile(templateSource);
+
 
 //create a variable that will keep track of the total bill
 //var calls = 0;

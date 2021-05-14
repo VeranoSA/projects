@@ -22,9 +22,13 @@ textInst.billCalculation(bill);
 
 //update the totals that is displayed on the screen.
 callTotalOneElement.innerHTML = template({
-totalCostTemp: textInst.getCallTotal().toFixed(2)})
-smsTotalOneElement.innerHTML = textInst.getSmsTotal().toFixed(2);
-totalOneElement.innerHTML = textInst.getTotalCost().toFixed(2);
+totalCallTemp: textInst.getCallTotal().toFixed(2)})
+
+smsTotalOneElement.innerHTML = template({
+totalSmsTemp: textInst.getSmsTotal().toFixed(2)})
+
+totalOneElement.innerHTML = template({
+totalCostTemp: textInst.getTotalCost().toFixed(2)})
 
 //color the total based on the criteria
 totalOneElement.classList.remove("warning");
