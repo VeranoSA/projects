@@ -243,3 +243,232 @@ window.onload = function(){
     displayNumberPlate()
 }
 
+
+//==================================THE END=====================================
+//===============================TEMPLATE DOM===================================
+//==============================================================================
+//==============================================================================
+
+
+var displayName2 = document.querySelector('#displayName2');
+
+var welcomeText2 = document.querySelector('#p12')
+
+var getInput2 = document.querySelector('#inputBox2');
+
+var showBtn2 = document.querySelector('#showBtn2');
+
+var showAll2 = document.querySelector('#showAll2');
+
+var resetBtn2 = document.querySelector('#resetBtn2');
+
+var displayCount2 = document.querySelector('#countNumber2');
+
+//Holds local storage
+var localLogic2 = {}
+//This array handles the objects being stored and used for display in the code
+var regNumbers2 = []
+//Global Constant for the regMap key, this is because is being used numerious times in the code
+var regMapKey2 = 'regMap2'
+//Global constant for the number zero(0)
+var ZERO2 = 0
+//This array handles the filterd  by town objects
+var townRegs2 = []
+
+//We are retriving infomation from the local storage
+if (localStorage[regMapKey2]) {
+    localLogic2 = localStorage[regMapKey2];
+}
+//an instance of the reg Factory
+var reg2 = regFactory();
+//Setting the local storage to the logic function
+reg2.setlocal(localLogic2)
+
+//get the registration from the textbox 
+var getName2 = function () {
+    var name = getInput2.value;
+    name = name.toUpperCase();
+    return {
+        name
+    }
+}
+
+//function to clear the textbox 
+var clearBox2 = function () {
+    getInput2.value = "";
+}
+
+var submitForm = function () {
+    var nameFromDom2 = getName2().name;
+    if (nameFromDom2) {
+        if (reg2.regNumber(nameFromDom2)) {
+            displayName2.innerHTML = 'Registration Was Successfuly Entered';
+            //Get stored array of registration number plate objects
+            regNumbers2 = getLocalStorageObject2(regMapKey2);
+            //Check to see of the array has objects
+            if (regNumbers2 === null || regNumbers2.length === ZERO) {
+                //Case if null then assign an empty array
+                regNumbers2 = [];
+                //Push currently being added object into the registration number array of objects
+                regNumbers2.push({ regNum: nameFromDom2 })
+                //set the latest array of objects to the local storage
+                setLocalStorageObject2(regMapKey2, regNumbers2);
+            } else {
+                //filter the stored array of objects for the incoming registration number so there are no duplications 
+                let exists = regNumbers2.filter(x => x.regNum === nameFromDom2)[ZERO];
+                if (exists == undefined) {
+                    regNumbers2.push({ regNum: nameFromDom2 })
+                    setLocalStorageObject(regMapKey2, regNumbers2);
+                }
+            }
+            regNumbers2 = [];
+        } else {
+            displayName2.innerHTML = 'Please Enter Correct Plate Format'
+        }
+        clearBox();
+    } else {
+        displayName2.innerHTML = 'Please Type In Registration To Proceed';
+    }
+    displayNumberPlate();
+    showRequestMessage();
+    return false;
+}
+
+/**
+ * This method gets displayed 3 seconds after a successful registration of a registration number
+ */
+function showRequestMessage() {
+    setInterval(function showMeesageDiv() {
+        displayName2.innerHTML = 'Please Enter Registration Number';
+    }, 4000);
+}
+
+/** close the div in 5 secs
+window.setTimeout("closeDiv();", 20000);
+function closeDiv() {
+    var Temp = document.getElementById("p1")
+    if (Temp != null)
+        Temp.style.display = "none";
+}
+*/
+// ======================EVENTS==============================
+
+//Event listener for the reset button
+resetBtn.addEventListener('click', function () {
+    localStorage.clear()
+    location.reload()
+});
+
+//========================Helper Functions=======================
+
+/**
+ * This function handles tHe retrieval of the stored array of objects
+ * @param {*} key 
+ * @returns 
+ */
+function getLocalStorageObject2(key) {
+    let temp = window.localStorage.getItem2(key);
+    return JSON.parse(temp);
+}
+
+/**
+ * This function handles appends a new Object in the storage array
+ * @param {*} key 
+ * @param {*} value 
+ */
+function setLocalStorageObject2(key, value) {
+    window.localStorage.setItem(key, JSON.stringify(value));
+}
+
+function displayNumberPlate2() {
+    RemoveHtmlElement2();
+    regNumbers2 = getLocalStorageObject2(regMapKey2)
+    //Add the data rows.
+    //Dynamically add the number plate buttons
+    if(regNumbers2 !== null) {
+        var divElement = document.getElementById('container');
+        for (var i = 0; i < regNumbers.length; i++) {
+            var button = document.createElement('button');
+            var divIdName = 'container' + i;
+            button.setAttribute('id', divIdName)
+            button.type = 'button';
+            button.innerHTML = regNumbers[i].regNum;
+            button.className = 'btn-styled';
+            divElement.appendChild(button);
+    
+            // var lineBreak = document.createElement('br');
+            // divElement.appendChild(lineBreak);
+        }
+    }
+}
+/**
+ * This function handles the removal of all the unwanted displyaed registration number divs/buttons
+ */
+function RemoveHtmlElement2() {
+    regNumbers = getLocalStorageObject2(regMapKey2)
+    var divId = document.getElementById('container');
+    if(regNumbers !== null) {
+        for (var i = 0; i < regNumbers.length; i++) {
+            var childId = document.getElementById('container' + i);
+            if (childId) {
+                divId.removeChild(childId);
+            }
+        }
+    }
+}
+
+/**
+ * This even listener executes the display of all the registration numbers by town
+*/
+showBtn.addEventListener('click', function () {
+    var radioBtn = document.querySelector('input[name="radioTown"]:checked');
+    if (radioBtn !== null) {
+        displayNumberPlateByTown2(radioBtn.value);
+    }
+    
+});
+
+
+/**
+ * This event listener handles the display of all the number plates persisted in the local storage
+ */
+showAll.addEventListener('click', function () {
+    displayNumberPlate2()
+});
+
+
+/**
+ * This Method handles the functions around adding button display divs dynamically in the body of the html page, specifically for a town
+ * @param {*} town 
+ */
+function displayNumberPlateByTown2(town) {
+    RemoveHtmlElement2();
+    regNumbers2 = getLocalStorageObject2(regMapKey2)
+    //Add the data rows.
+    if(regNumbers2 !== null) {
+        for (var i = 0; i < regNumbers2.length; i++) {
+            var regSubstring  = regNumbers2[i].regNum;
+            if( regSubstring.substr(0, 2) === town) {
+                townRegs2.push(regNumbers2[i])
+            }
+        }
+        var divElement = document.getElementById('container');
+        for (var i = 0; i < townRegs2.length; i++) {
+            var button = document.createElement('button');
+            var divIdName = 'container' + i;
+            button.setAttribute('id', divIdName)
+            button.type = 'button';
+            button.innerHTML = townRegs2[i].regNum;
+            button.className = 'btn-styled';
+            divElement.appendChild(button);
+    
+            // var lineBreak = document.createElement('br');
+            // divElement.appendChild(lineBreak);
+        }
+    }
+    townRegs2 = []
+}
+
+window.onload = function(){
+    displayNumberPlate()
+}
