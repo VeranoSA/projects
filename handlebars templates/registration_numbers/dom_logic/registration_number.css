@@ -201,12 +201,25 @@ p {
         /* Safari */
         transition-duration: 0.4s;
     }
+    #inputBox2 {
+        border: 2px solid darkslategray;
+        border-radius: 25px;
+        width: 50%;
+        height: 50px;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+    }
     #counterAndResetBox {
         position: relative;
         top: 70px;
         right: 10px;
     }
     #addBtn {
+        position: relative;
+        top: 1px;
+    }
+    #addBtn2 {
         position: relative;
         top: 1px;
     }
@@ -332,7 +345,12 @@ p {
 }
 
 #inputBox:focus,
+#inputBox2:focus,
 #inputBox:active {
+    outline: none !important;
+    box-shadow: none;
+}
+#inputBox2:active {
     outline: none !important;
     box-shadow: none;
 }
@@ -347,8 +365,21 @@ p {
     /* Safari */
     transition-duration: 0.4s;
 }
+#inputBox2 {
+    border: 2px solid darkslategray;
+    border-radius: 25px;
+    width: 85%;
+    min-width: 300px;
+    height: 50px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
 
 #inputBox:hover {
+    background-color:rgba(210,105,30);
+}
+#inputBox2:hover {
     background-color:rgba(210,105,30);
 }
 
@@ -370,8 +401,16 @@ button {
     bottom: 108px;
     right: 19px;
 }
+#addBtn2 {
+    position: relative;
+    bottom: 108px;
+    right: 19px;
+}
 
 #addBtn:hover {
+    background-color:rgba(210,105,30);
+}
+#addBtn2:hover {
     background-color:rgba(210,105,30);
 }
 
