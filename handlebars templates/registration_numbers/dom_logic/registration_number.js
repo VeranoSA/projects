@@ -374,6 +374,7 @@ function closeDiv() {
 resetBtn2.addEventListener('click', function () {
     RemoveHtmlElement2()
     localStorage.removeItem(regMapKey2)
+    location.reload()
 });
 
 //========================Helper Functions=======================
