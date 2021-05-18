@@ -227,7 +227,15 @@ p {
         position: relative;
         top: 1px;
     }
+    #showBtn2 {
+        position: relative;
+        top: 1px;
+    }
     #addBox {
+        position: relative;
+        bottom: 110px;
+    }
+    #addBox2 {
         position: relative;
         bottom: 110px;
     }
@@ -235,7 +243,15 @@ p {
         position: relative;
         top: 1px;
     }
+    #showAll2 {
+        position: relative;
+        top: 1px;
+    }
     #showBox {
+        position: relative;
+        bottom: 110px;
+    }
+    #showBox2 {
         position: relative;
         bottom: 110px;
     }
@@ -419,8 +435,18 @@ button {
     bottom: 108px;
     right: 19px;
 }
+#showBtn2 {
+    position: relative;
+    bottom: 108px;
+    right: 19px;
+}
 
 #showAll {
+    position: relative;
+    bottom: 108px;
+    right: 19px;
+}
+#showAll2 {
     position: relative;
     bottom: 108px;
     right: 19px;
@@ -430,12 +456,21 @@ button {
 #showBtn:hover {
     background-color:rgba(210,105,30);
 }
+#showBtn2:hover {
+    background-color:rgba(210,105,30);
+}
 
 #resetBtn:hover {
     background-color:rgba(210,105,30);
 }
+#resetBtn2:hover {
+    background-color:rgba(210,105,30);
+}
 
 #showAll:hover {
+    background-color:rgba(210,105,30);
+}
+#showAll2:hover {
     background-color:rgba(210,105,30);
 }
 
@@ -447,6 +482,9 @@ button:active {
 }
 
 #p1 {
+    height: 100px;
+}
+#p2 {
     height: 100px;
 }
 

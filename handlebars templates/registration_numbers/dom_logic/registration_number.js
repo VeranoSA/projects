@@ -125,14 +125,14 @@ function closeDiv() {
 
 //Event listener for the reset button
 resetBtn.addEventListener('click', function () {
-    localStorage.clear()
+    localStorage.removeItem(regMapKey)
     location.reload()
 });
 
 //========================Helper Functions=======================
 
 /**
- * This function handles te retrieval of the stored array of objects
+ * This function handles the retrieval of the stored array of objects
  * @param {*} key 
  * @returns 
  */
@@ -147,7 +147,7 @@ function getLocalStorageObject(key) {
  * @param {*} value 
  */
 function setLocalStorageObject(key, value) {
-    window.localStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(key, JSON.stringify(value));
 }
 
 function displayNumberPlate() {
@@ -239,7 +239,7 @@ function displayNumberPlateByTown(town) {
     townRegs = []
 }
 
-window.onload = function(){
+onload = function(){
     displayNumberPlate()
 }
 
@@ -248,7 +248,6 @@ window.onload = function(){
 //===============================TEMPLATE DOM===================================
 //==============================================================================
 //==============================================================================
-
 
 var displayName2 = document.querySelector('#displayName2');
 
@@ -298,7 +297,7 @@ var clearBox2 = function () {
     getInput2.value = "";
 }
 
-var submitForm = function () {
+var submitForm2 = function () {
     var nameFromDom2 = getName2().name;
     if (nameFromDom2) {
         if (reg2.regNumber(nameFromDom2)) {
@@ -306,39 +305,39 @@ var submitForm = function () {
             //Get stored array of registration number plate objects
             regNumbers2 = getLocalStorageObject2(regMapKey2);
             //Check to see of the array has objects
-            if (regNumbers2 === null || regNumbers2.length === ZERO) {
+            if (regNumbers2 === null || regNumbers2.length === ZERO2) {
                 //Case if null then assign an empty array
                 regNumbers2 = [];
                 //Push currently being added object into the registration number array of objects
-                regNumbers2.push({ regNum: nameFromDom2 })
+                regNumbers2.push({ regNum2: nameFromDom2 })
                 //set the latest array of objects to the local storage
                 setLocalStorageObject2(regMapKey2, regNumbers2);
             } else {
                 //filter the stored array of objects for the incoming registration number so there are no duplications 
-                let exists = regNumbers2.filter(x => x.regNum === nameFromDom2)[ZERO];
+                let exists = regNumbers2.filter(x => x.regNum2 === nameFromDom2)[ZERO2];
                 if (exists == undefined) {
-                    regNumbers2.push({ regNum: nameFromDom2 })
-                    setLocalStorageObject(regMapKey2, regNumbers2);
+                    regNumbers2.push({ regNum2: nameFromDom2 })
+                    setLocalStorageObject2(regMapKey2, regNumbers2);
                 }
             }
             regNumbers2 = [];
         } else {
             displayName2.innerHTML = 'Please Enter Correct Plate Format'
         }
-        clearBox();
+        clearBox2();
     } else {
         displayName2.innerHTML = 'Please Type In Registration To Proceed';
     }
-    displayNumberPlate();
-    showRequestMessage();
+    displayNumberPlate2();
+    showRequestMessage2();
     return false;
 }
-
+/*
 /**
  * This method gets displayed 3 seconds after a successful registration of a registration number
  */
-function showRequestMessage() {
-    setInterval(function showMeesageDiv() {
+function showRequestMessage2() {
+    setInterval(function showMeesageDiv2() {
         displayName2.innerHTML = 'Please Enter Registration Number';
     }, 4000);
 }
@@ -354,8 +353,8 @@ function closeDiv() {
 // ======================EVENTS==============================
 
 //Event listener for the reset button
-resetBtn.addEventListener('click', function () {
-    localStorage.clear()
+resetBtn2.addEventListener('click', function () {
+    localStorage.removeItem(regMapKey2)
     location.reload()
 });
 
@@ -367,7 +366,7 @@ resetBtn.addEventListener('click', function () {
  * @returns 
  */
 function getLocalStorageObject2(key) {
-    let temp = window.localStorage.getItem2(key);
+    let temp = window.localStorage.getItem(key);
     return JSON.parse(temp);
 }
 
@@ -386,13 +385,13 @@ function displayNumberPlate2() {
     //Add the data rows.
     //Dynamically add the number plate buttons
     if(regNumbers2 !== null) {
-        var divElement = document.getElementById('container');
-        for (var i = 0; i < regNumbers.length; i++) {
+        var divElement = document.getElementById('container2');
+        for (var i = 0; i < regNumbers2.length; i++) {
             var button = document.createElement('button');
-            var divIdName = 'container' + i;
+            var divIdName = 'container2' + i;
             button.setAttribute('id', divIdName)
             button.type = 'button';
-            button.innerHTML = regNumbers[i].regNum;
+            button.innerHTML = regNumbers2[i].regNum2;
             button.className = 'btn-styled';
             divElement.appendChild(button);
     
@@ -405,11 +404,11 @@ function displayNumberPlate2() {
  * This function handles the removal of all the unwanted displyaed registration number divs/buttons
  */
 function RemoveHtmlElement2() {
-    regNumbers = getLocalStorageObject2(regMapKey2)
-    var divId = document.getElementById('container');
-    if(regNumbers !== null) {
-        for (var i = 0; i < regNumbers.length; i++) {
-            var childId = document.getElementById('container' + i);
+    regNumbers2 = getLocalStorageObject2(regMapKey2)
+    var divId = document.getElementById('container2');
+    if(regNumbers2 !== null) {
+        for (var i = 0; i < regNumbers2.length; i++) {
+            var childId = document.getElementById('container2' + i);
             if (childId) {
                 divId.removeChild(childId);
             }
@@ -420,8 +419,8 @@ function RemoveHtmlElement2() {
 /**
  * This even listener executes the display of all the registration numbers by town
 */
-showBtn.addEventListener('click', function () {
-    var radioBtn = document.querySelector('input[name="radioTown"]:checked');
+showBtn2.addEventListener('click', function () {
+    var radioBtn = document.querySelector('input[name="radioTown2"]:checked');
     if (radioBtn !== null) {
         displayNumberPlateByTown2(radioBtn.value);
     }
@@ -432,7 +431,7 @@ showBtn.addEventListener('click', function () {
 /**
  * This event listener handles the display of all the number plates persisted in the local storage
  */
-showAll.addEventListener('click', function () {
+showAll2.addEventListener('click', function () {
     displayNumberPlate2()
 });
 
@@ -447,18 +446,18 @@ function displayNumberPlateByTown2(town) {
     //Add the data rows.
     if(regNumbers2 !== null) {
         for (var i = 0; i < regNumbers2.length; i++) {
-            var regSubstring  = regNumbers2[i].regNum;
+            var regSubstring  = regNumbers2[i].regNum2;
             if( regSubstring.substr(0, 2) === town) {
                 townRegs2.push(regNumbers2[i])
             }
         }
-        var divElement = document.getElementById('container');
+        var divElement = document.getElementById('container2');
         for (var i = 0; i < townRegs2.length; i++) {
             var button = document.createElement('button');
-            var divIdName = 'container' + i;
+            var divIdName = 'container2' + i;
             button.setAttribute('id', divIdName)
             button.type = 'button';
-            button.innerHTML = townRegs2[i].regNum;
+            button.innerHTML = townRegs2[i].regNum2;
             button.className = 'btn-styled';
             divElement.appendChild(button);
     
@@ -470,5 +469,5 @@ function displayNumberPlateByTown2(town) {
 }
 
 window.onload = function(){
-    displayNumberPlate()
+    displayNumberPlate2()
 }
