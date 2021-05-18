@@ -6,6 +6,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./registration_number.css">
       <title>Document</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+      <script type="text/x-template" class="carRegTemplate">
+         {{#each regNums}}
+            <button id="{{@index}}" type="submit" form="form12">
+               {{regNum2}}
+            </button>
+         {{/each}}
+      </script> 
    </head>
    <body>
       <div class="row center">
@@ -117,14 +125,14 @@
          <div class="row center">
             <!--            <div class="col-4"></div>-->
             <div class=" col-12 radio-toolbar">
-               <input type="radio" name="radioTown2" value="CA" id="1" >
-               <label for="1"> Cape Town</label>
-               <input type="radio" name="radioTown2" value="CJ" id="2" >
-               <label for="2">Paarl</label>
-               <input type="radio" name="radioTown2" value="CY" id="3" >
-               <label for="3">Bellville</label>
-               <input type="radio" name="radioTown2" value="CL" id="4" >
-               <label for="4">Stellenbosch</label>
+               <input type="radio" name="radioTown2" value="CA" id="5" >
+               <label for="5"> Cape Town</label>
+               <input type="radio" name="radioTown2" value="CJ" id="6" >
+               <label for="6">Paarl</label>
+               <input type="radio" name="radioTown2" value="CY" id="7" >
+               <label for="7">Bellville</label>
+               <input type="radio" name="radioTown2" value="CL" id="8" >
+               <label for="8">Stellenbosch</label>
             </div>
             <!--            <div class="col-4"></div>-->
          </div>
@@ -152,9 +160,9 @@
          </div>
          <fieldset>
             <legend>Registration Numbers List</legend>
-            <div id="container2">
-               <div id="dvTable2"></div>
-            </div>
+               <div id="tempDisplay">
+
+               </div>
          </fieldset>
       </fieldset>
       </div>

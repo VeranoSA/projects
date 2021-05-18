@@ -89,6 +89,8 @@ var submitForm = function () {
                 if (exists == undefined) {
                     regNumbers.push({ regNum: nameFromDom })
                     setLocalStorageObject(regMapKey, regNumbers);
+                } else {
+                    displayName.innerHTML = 'Number Plate Already Exists!'
                 }
             }
             regNumbers = [];
@@ -125,8 +127,8 @@ function closeDiv() {
 
 //Event listener for the reset button
 resetBtn.addEventListener('click', function () {
+    RemoveHtmlElement()
     localStorage.removeItem(regMapKey)
-    location.reload()
 });
 
 //========================Helper Functions=======================
@@ -239,8 +241,9 @@ function displayNumberPlateByTown(town) {
     townRegs = []
 }
 
-onload = function(){
+window.onload = function(){
     displayNumberPlate()
+    // displayNumberPlate2()
 }
 
 
@@ -297,6 +300,18 @@ var clearBox2 = function () {
     getInput2.value = "";
 }
 
+var carRegTemplate = document.querySelector(".carRegTemplate").innerHTML;
+
+// compile the template
+var templateScript = Handlebars.compile(carRegTemplate);
+
+regNumbers2 = getLocalStorageObject2(regMapKey2);
+
+if (regNumbers2) {
+    document.querySelector('#tempDisplay').innerHTML  = templateScript({regNums: regNumbers2});
+}
+
+
 var submitForm2 = function () {
     var nameFromDom2 = getName2().name;
     if (nameFromDom2) {
@@ -318,6 +333,8 @@ var submitForm2 = function () {
                 if (exists == undefined) {
                     regNumbers2.push({ regNum2: nameFromDom2 })
                     setLocalStorageObject2(regMapKey2, regNumbers2);
+                } else {
+                    displayName2.innerHTML = 'Number Plate Already Exists!'
                 }
             }
             regNumbers2 = [];
@@ -328,8 +345,9 @@ var submitForm2 = function () {
     } else {
         displayName2.innerHTML = 'Please Type In Registration To Proceed';
     }
-    displayNumberPlate2();
+     
     showRequestMessage2();
+    location.reload()
     return false;
 }
 /*
@@ -354,8 +372,8 @@ function closeDiv() {
 
 //Event listener for the reset button
 resetBtn2.addEventListener('click', function () {
+    RemoveHtmlElement2()
     localStorage.removeItem(regMapKey2)
-    location.reload()
 });
 
 //========================Helper Functions=======================
@@ -385,10 +403,10 @@ function displayNumberPlate2() {
     //Add the data rows.
     //Dynamically add the number plate buttons
     if(regNumbers2 !== null) {
-        var divElement = document.getElementById('container2');
+        var divElement = document.getElementById('containerTemp');
         for (var i = 0; i < regNumbers2.length; i++) {
             var button = document.createElement('button');
-            var divIdName = 'container2' + i;
+            var divIdName = 'containerTemp' + i;
             button.setAttribute('id', divIdName)
             button.type = 'button';
             button.innerHTML = regNumbers2[i].regNum2;
@@ -405,10 +423,10 @@ function displayNumberPlate2() {
  */
 function RemoveHtmlElement2() {
     regNumbers2 = getLocalStorageObject2(regMapKey2)
-    var divId = document.getElementById('container2');
+    var divId = document.getElementById('containerTemp');
     if(regNumbers2 !== null) {
         for (var i = 0; i < regNumbers2.length; i++) {
-            var childId = document.getElementById('container2' + i);
+            var childId = document.getElementById('containerTemp' + i);
             if (childId) {
                 divId.removeChild(childId);
             }
@@ -451,10 +469,10 @@ function displayNumberPlateByTown2(town) {
                 townRegs2.push(regNumbers2[i])
             }
         }
-        var divElement = document.getElementById('container2');
+        var divElement = document.getElementById('containerTemp');
         for (var i = 0; i < townRegs2.length; i++) {
             var button = document.createElement('button');
-            var divIdName = 'container2' + i;
+            var divIdName = 'containerTemp' + i;
             button.setAttribute('id', divIdName)
             button.type = 'button';
             button.innerHTML = townRegs2[i].regNum2;
@@ -468,6 +486,3 @@ function displayNumberPlateByTown2(town) {
     townRegs2 = []
 }
 
-window.onload = function(){
-    displayNumberPlate2()
-}
