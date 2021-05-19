@@ -300,6 +300,9 @@ var clearBox2 = function () {
     getInput2.value = "";
 }
 
+/**
+ * This is where i use handlebars to compile templates into my JS functions.
+ */
 var carRegTemplate = document.querySelector(".carRegTemplate").innerHTML;
 
 // compile the template
