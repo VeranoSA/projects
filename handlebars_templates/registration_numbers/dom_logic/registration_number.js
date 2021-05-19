@@ -242,8 +242,7 @@ function displayNumberPlateByTown(town) {
 }
 
 window.onload = function(){
-    displayNumberPlate()
-    // displayNumberPlate2()
+    displayNumberPlate();
 }
 
 
@@ -314,13 +313,13 @@ if (regNumbers2) {
     document.querySelector('#tempDisplay').innerHTML  = templateScript({regNums: regNumbers2});
 }
 
-
 var submitForm2 = function () {
     var nameFromDom2 = getName2().name;
     if (nameFromDom2) {
         if (reg2.regNumber(nameFromDom2)) {
-            displayName2.innerHTML = 'Registration Was Successfuly Entered';
             //Get stored array of registration number plate objects
+            dispMesage('Registration Was Successfuly Entered')
+
             regNumbers2 = getLocalStorageObject2(regMapKey2);
             //Check to see of the array has objects
             if (regNumbers2 === null || regNumbers2.length === ZERO2) {
@@ -337,22 +336,32 @@ var submitForm2 = function () {
                     regNumbers2.push({ regNum2: nameFromDom2 })
                     setLocalStorageObject2(regMapKey2, regNumbers2);
                 } else {
-                    displayName2.innerHTML = 'Number Plate Already Exists!'
+                    dispMesage('Number Plate Already Exists!');
+                    clearBox2();
                 }
             }
             regNumbers2 = [];
         } else {
-            displayName2.innerHTML = 'Please Enter Correct Plate Format'
+            dispMesage('Please Enter Correct Plate Format');
+            clearBox2();
         }
-        clearBox2();
     } else {
-        displayName2.innerHTML = 'Please Type In Registration To Proceed';
+        dispMesage('Please Type In Registration To Proceed')
     }
-     
-    showRequestMessage2();
-    location.reload()
+    regNumbers2 = getLocalStorageObject2(regMapKey2);
+
+    if (regNumbers2) {
+        document.querySelector('#tempDisplay').innerHTML  = templateScript({regNums: regNumbers2});
+    }
+    clearBox2();
     return false;
 }
+
+function dispMesage(message) {
+    displayName2.innerHTML = message
+    showRequestMessage2();
+}
+
 /*
 /**
  * This method gets displayed 3 seconds after a successful registration of a registration number
@@ -363,21 +372,13 @@ function showRequestMessage2() {
     }, 4000);
 }
 
-/** close the div in 5 secs
-window.setTimeout("closeDiv();", 20000);
-function closeDiv() {
-    var Temp = document.getElementById("p1")
-    if (Temp != null)
-        Temp.style.display = "none";
-}
-*/
 // ======================EVENTS==============================
 
 //Event listener for the reset button
 resetBtn2.addEventListener('click', function () {
-    RemoveHtmlElement2()
     localStorage.removeItem(regMapKey2)
-    location.reload()
+    const myNode = document.getElementById("tempDisplay");
+    myNode.innerHTML = '';
 });
 
 //========================Helper Functions=======================
@@ -402,41 +403,12 @@ function setLocalStorageObject2(key, value) {
 }
 
 function displayNumberPlate2() {
-    RemoveHtmlElement2();
     regNumbers2 = getLocalStorageObject2(regMapKey2)
-    //Add the data rows.
-    //Dynamically add the number plate buttons
-    if(regNumbers2 !== null) {
-        var divElement = document.getElementById('containerTemp');
-        for (var i = 0; i < regNumbers2.length; i++) {
-            var button = document.createElement('button');
-            var divIdName = 'containerTemp' + i;
-            button.setAttribute('id', divIdName)
-            button.type = 'button';
-            button.innerHTML = regNumbers2[i].regNum2;
-            button.className = 'btn-styled';
-            divElement.appendChild(button);
-    
-            // var lineBreak = document.createElement('br');
-            // divElement.appendChild(lineBreak);
-        }
+    if (regNumbers2) {
+        document.querySelector('#tempDisplay').innerHTML  = templateScript({regNums: regNumbers2});
     }
 }
-/**
- * This function handles the removal of all the unwanted displyaed registration number divs/buttons
- */
-function RemoveHtmlElement2() {
-    regNumbers2 = getLocalStorageObject2(regMapKey2)
-    var divId = document.getElementById('containerTemp');
-    if(regNumbers2 !== null) {
-        for (var i = 0; i < regNumbers2.length; i++) {
-            var childId = document.getElementById('containerTemp' + i);
-            if (childId) {
-                divId.removeChild(childId);
-            }
-        }
-    }
-}
+
 
 /**
  * This even listener executes the display of all the registration numbers by town
@@ -463,7 +435,6 @@ showAll2.addEventListener('click', function () {
  * @param {*} town 
  */
 function displayNumberPlateByTown2(town) {
-    RemoveHtmlElement2();
     regNumbers2 = getLocalStorageObject2(regMapKey2)
     //Add the data rows.
     if(regNumbers2 !== null) {
@@ -473,18 +444,8 @@ function displayNumberPlateByTown2(town) {
                 townRegs2.push(regNumbers2[i])
             }
         }
-        var divElement = document.getElementById('containerTemp');
-        for (var i = 0; i < townRegs2.length; i++) {
-            var button = document.createElement('button');
-            var divIdName = 'containerTemp' + i;
-            button.setAttribute('id', divIdName)
-            button.type = 'button';
-            button.innerHTML = townRegs2[i].regNum2;
-            button.className = 'btn-styled';
-            divElement.appendChild(button);
-    
-            // var lineBreak = document.createElement('br');
-            // divElement.appendChild(lineBreak);
+        if (regNumbers2) {
+            document.querySelector('#tempDisplay').innerHTML  = templateScript({regNums: townRegs2});
         }
     }
     townRegs2 = []
