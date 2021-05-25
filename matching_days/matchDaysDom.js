@@ -18,13 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //on page load should display nothing
     display('nothing');
 
-    //this returns a date object given a string
-    let makeDate = function (dateString) {
-
-        let dateObject = new Date(dateString);
-        return dateObject
-    }
-
     //this returns a weekday as string given a full date
     let getDay = function (date) {
 
@@ -52,6 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    //this returns a date object given a string
+    let makeDate = function (dateString) {
+
+        let dateObject = new Date(dateString);
+        return dateObject
+    }
+    
     //The function to create a template given an object with day(s) of the week
     function display(daysObject) {
         var weekdaysElement = document.getElementById("boxes-container");
