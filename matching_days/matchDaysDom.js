@@ -5,9 +5,12 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // date elements refs to the HTML
+    //refs to the HTML of the date elements
     var dateElement1 = document.getElementById('d1');
     var dateElement2 = document.getElementById('d2');
+
+    //an instance of the reg Factory
+    var match = MatchingDays();
 
     //object to temporarily hold the weekdays to match
     var tmpDays = {};
@@ -49,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    //The unction to create a template given an object with day(s) of the week
+    //The function to create a template given an object with day(s) of the week
     function display(daysObject) {
         var weekdaysElement = document.getElementById("boxes-container");
         var weekdaysTemplateSource = document.getElementById("matchingTemplate").innerHTML;
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             display(tmpDays);
         } else {
             tmpDays.d1 = '';
-            MatchingDays();
+            match.MatchingDays();
             display('nothing');
 
         }
@@ -80,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             display(tmpDays);
         } else {
             tmpDays.d2 = '';
-            MatchingDays();
+            match.MatchingDays();
             display('nothing');
         }
 
