@@ -15,7 +15,7 @@ body {
     left: 0;
     top: 0;
     font-size: 100%;
-    background-image: url("website.jpg");
+    background-image : url("website.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: aqua;
@@ -359,186 +359,45 @@ p {
 
 /* ==========================Custom CSS here ===========================================*/
 
+/*******************************CUSTOM CSS ***********************************************/
+
 .center {
     text-align: center;
 }
 
-#inputBox:focus,
-#inputBox2:focus,
-#inputBox:active {
-    outline: none !important;
-    box-shadow: none;
-}
-#inputBox2:active {
-    outline: none !important;
-    box-shadow: none;
-}
-
-#inputBox {
-    border: 2px solid darkslategray;
-    border-radius: 25px;
-    width: 85%;
-    min-width: 300px;
-    height: 50px;
-    -webkit-transition-duration: 0.4s;
-    /* Safari */
-    transition-duration: 0.4s;
-}
-#inputBox2 {
-    border: 2px solid darkslategray;
-    border-radius: 25px;
-    width: 85%;
-    min-width: 300px;
-    height: 50px;
-    -webkit-transition-duration: 0.4s;
-    /* Safari */
-    transition-duration: 0.4s;
-}
-
-#inputBox:hover {
-    background-color:rgb(209, 216, 255);
-}
-#inputBox2:hover {
-    background-color:rgba(210,105,30);
-}
-
-input {
-    text-align: center
-}
-
-button {
-    border: 2px solid darkslategray;
-    width: 100px;
-    height: 40px;
-    background-color: white;
-    /* background: #333447; */
-    border-radius: 25px;
-}
-
-#addBtn {
-    position: relative;
-    bottom: 108px;
-    right: 19px;
-}
-#addBtn2 {
-    position: relative;
-    bottom: 108px;
-    right: 19px;
-}
-
-#addBtn:hover {
-    background-color:rgba(210,105,30);
-}
-#addBtn2:hover {
-    background-color:rgba(210,105,30);
-}
-
-#showBtn {
-    position: relative;
-    bottom: 108px;
-    right: 19px;
-}
-#showBtn2 {
-    position: relative;
-    bottom: 108px;
-    right: 19px;
-}
-
-#showAll {
-    position: relative;
-    bottom: 108px;
-    right: 19px;
-}
-#showAll2 {
-    position: relative;
-    bottom: 108px;
-    right: 19px;
-}
-
-
-#showBtn:hover {
-    background-color:rgba(210,105,30);
-}
-#showBtn2:hover {
-    background-color:rgba(210,105,30);
-}
-
-#resetBtn:hover {
-    background-color:rgba(210,105,30);
-}
-#resetBtn2:hover {
-    background-color:rgba(210,105,30);
-}
-
-#showAll:hover {
-    background-color:rgba(210,105,30);
-}
-#showAll2:hover {
-    background-color:rgba(210,105,30);
-}
-
-
-button:focus,
-button:active {
-    outline: none !important;
-    box-shadow: none;
-}
-
-#p1 {
-    height: 100px;
-}
-#p2 {
-    height: 100px;
-}
-
-.block {
+.inline-block {
     display: inline-block;
 }
 
-/*
-#counterAndResetBox {
-    position: relative;
-    bottom: 50px;
+#boxes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    /* border: 1px solid black; */
 }
-*/
-/*
-#p1 {
-   width: 720px;
-}
-*/
-/*Radio buttons style*/
 
-.radio-toolbar {
+.box {
+    width: 150px;
+    height: 50px;
     margin: 10px;
+    text-align: center;
 }
 
-.radio-toolbar input[type="radio"] {
-    display: none;
+.textDays {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: black;
 }
 
-.radio-toolbar label {
-    display: inline-block;
-    height: 10px;
-    /*    padding: 15px 15px;*/
-    padding: 0px 14px 16px 7px;
-    /*    font-family: Arial;*/
-    font-size: 16px;
-    border: 2px solid #444;
-    border-radius: 10px;
+.match {
+    background-color: green;
 }
 
-.radio-toolbar label:hover {
-    background-color: rgba(210,105,30);
+.nomatch {
+    background-color: orange;
 }
 
-.radio-toolbar input[type="radio"]:checked+label {
-    background-color: rgb(5, 169, 172);
-    border-color: black;
-}
-
-.btn-styled {
-    font-size: 14px;
-    margin: 8px;
-    padding: 0 10px;
-    line-height: 2;
+.nomatch1 {
+    background-color:red;
 }

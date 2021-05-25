@@ -5,7 +5,18 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./stylesheet.css">
-      <title>Document</title>
+      <title>Matching Days</title>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+      <script type="text/x-template" id="matchingTemplate">
+          {{#each days}} {{#if this}}
+          <div class={{status}}>
+              {{/if}}
+              <p class="textDays box border inline-block">{{this.day}}</p>
+          </div>
+          {{/each}}
+         </script>
    </head>
    <body>
       <div class="row">
@@ -35,8 +46,11 @@
              <h2>Second Date</h2>
              <input id="d2" type="date">
          </div>
+
  
  
      </div>
    </body>
+      <script type="text/javascript" src="./matchDays.js"></script>
+      <script type="text/javascript" src="./matchDaysDom.js"></script>
 </html>
