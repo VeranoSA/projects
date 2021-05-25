@@ -1,3 +1,4 @@
+//==========================Factory Function===========================//
 function MatchingDays(day1, day2) {
 
     //variable with day and status objects
@@ -29,10 +30,7 @@ function MatchingDays(day1, day2) {
             day: 'Saturday',
             status: ''
         }
-
-
     ];
-
     var styleClear = function () {
         let i = 6;
         while (i > 0) {
@@ -40,7 +38,6 @@ function MatchingDays(day1, day2) {
             i--;
         }
     }
-
     var match = function (day, day0) {
         return day == day0
     }

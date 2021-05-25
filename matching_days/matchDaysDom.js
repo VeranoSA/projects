@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //object to temporarily hold the weekdays to match
     var tmpDays = {};
 
-    // on page load should display nothing
+    //on page load should display nothing
     display('nothing');
 
     //this returns a date object given a string
