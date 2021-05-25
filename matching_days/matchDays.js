@@ -33,7 +33,7 @@ function MatchingDays(day1, day2) {
 
     ];
 
-    var clearStyle = function () {
+    var styleClear = function () {
         let i = 6;
         while (i > 0) {
             days[i].status = '';
@@ -44,9 +44,9 @@ function MatchingDays(day1, day2) {
     var match = function (day, day0) {
         return day == day0
     }
-
+    //setting up my color classes if days are the same should be green
     if (match(day1, day2)) {
-        clearStyle()
+        styleClear()
         for (let i = 0; i < 7; i++) {
             if (days[i].day == day1) {
                 days[i].status = 'match';
@@ -57,13 +57,14 @@ function MatchingDays(day1, day2) {
             match
         }
     } else {
-        clearStyle()
+        styleClear()
+    //setting up my color classes if days are not the same should be orange and green
         for (let i = 0; i < days.length; i++) {
             if (days[i].day == day1) {
                 days[i].status = 'nomatch';
             }
             if (days[i].day == day2) {
-                days[i].status = 'nomatch1';
+                days[i].status = 'alsoNomatch';
             }
         }
         return {
