@@ -1,6 +1,7 @@
-//================================ DOM ================================================//
+//================================ DOM ===================================//
 
-
+//Method Used:
+//Event_Target - The target event property returns the element that triggered the event.
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -8,18 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var dateElement1 = document.getElementById('d1');
     var dateElement2 = document.getElementById('d2');
 
+    //object to temporarily hold the weekdays to match
+    var tmpDays = {};
 
-    // on page load
+    // on page load should display nothing
     display('nothing');
 
-    //return a date object given a string
+    //this returns a date object given a string
     let makeDate = function (dateString) {
 
         let dateObject = new Date(dateString);
         return dateObject
     }
 
-    //return a weekday as string given a full date
+    //this returns a weekday as string given a full date
     let getDay = function (date) {
 
         switch (date.getDay()) {
@@ -46,11 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
-    //object to temporarily hold the weekdays to match
-    var tmpDays = {};
-
-    //function to create a template given an object with day(s) of the week
+    //The unction to create a template given an object with day(s) of the week
     function display(daysObject) {
         var weekdaysElement = document.getElementById("boxes-container");
         var weekdaysTemplateSource = document.getElementById("matchingTemplate").innerHTML;
@@ -60,8 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         weekdaysElement.innerHTML = weekdaysHTML;
     }
 
-
-    //event listeners for the two date inputs that will create date objects and store the weekdays into the weekDays object
+    //This event listeners for the two date inputs that will create date objects and store the weekdays into the weekDays object
     dateElement1.addEventListener('change', function (event) {
         if (event.target.value) {
             var dateObject = makeDate(event.target.value);

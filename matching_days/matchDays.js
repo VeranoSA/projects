@@ -1,7 +1,6 @@
 function MatchingDays(day1, day2) {
-    //console.log(day1, day2);
 
-
+    //variable with day and status objects
     var days = [{
             day: 'Sunday',
             status: ''
@@ -34,7 +33,6 @@ function MatchingDays(day1, day2) {
 
     ];
 
-
     var clearStyle = function () {
         let i = 6;
         while (i > 0) {
@@ -43,12 +41,9 @@ function MatchingDays(day1, day2) {
         }
     }
 
-
-
     var match = function (day, day0) {
         return day == day0
     }
-
 
     if (match(day1, day2)) {
         clearStyle()

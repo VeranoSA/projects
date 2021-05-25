@@ -13,7 +13,7 @@
           {{#each days}} {{#if this}}
           <div class={{status}}>
               {{/if}}
-              <p class="textDays box border inline-block">{{this.day}}</p>
+              <div class="textDays box border inline-block">{{this.day}}</div>
           </div>
           {{/each}}
          </script>
@@ -23,16 +23,12 @@
          <div class="col-12 center">
              <h1>Matching Days</h1>
              <br>
-             <p>Hi there pick two dates from the inputs below and see if the weekdays match!</p>
+             <p>Hi there pick two dates from the inputs below, If the color turns green then the weekdays match!</p>
  
          </div>
      </div>
  
-     <div class="row">
-         <div id="boxes-container" class="col-12">
- 
-         </div>
-     </div>
+    
      <div class="row">
          <div id="messageArea" class="col-12"></div>
  
@@ -46,10 +42,12 @@
              <h2>Second Date</h2>
              <input id="d2" type="date">
          </div>
-
- 
- 
      </div>
+     <div class="row">
+      <div id="boxes-container" class="col-12">
+
+      </div>
+  </div>
    </body>
       <script type="text/javascript" src="./matchDays.js"></script>
       <script type="text/javascript" src="./matchDaysDom.js"></script>
