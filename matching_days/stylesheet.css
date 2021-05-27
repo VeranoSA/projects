@@ -5,6 +5,24 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
 /* UNIVERSAL */
+.hol{
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    background-image: url("website.jpg");
+    background-size: cover;
+}
+
+.hol::before{
+
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(250, 250, 250, 0.66);
+}
 
 html,
 body {
@@ -15,9 +33,7 @@ body {
     left: 0;
     top: 0;
     font-size: 100%;
-    background-image : url("website.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
+    
 }
 
 /* ROOT FONT STYLES */
