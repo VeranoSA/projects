@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let dateObject = new Date(dateString);
         return dateObject
     }
-    
+    //=========================Template Compilation===========================//
     //The function to create a template given an object with day(s) of the week
     function display(daysObject) {
         var weekdaysElement = document.getElementById("boxes-container");
