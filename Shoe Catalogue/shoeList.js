@@ -1,0 +1,67 @@
+let shoesArray = [{
+    brand: "Adidas",
+    color: "Black",
+    price: 1999,
+    id: 0,
+    qty: 15,
+    size: 8,
+    "img-link": ""
+}, {
+    brand: "Adidas",
+    color: "Brown",
+    price: 1999,
+    id: 1,
+    qty: 15,
+    size: 8,
+    "img-link": ""
+}, {
+    brand: "Nike",
+    color: "Black",
+    price: 1999,
+    id: 2,
+    qty: 15,
+    size: 8,
+    "img-link": ""
+},
+{
+    brand: "Nike",
+    color: "Red",
+    price: 1999,
+    id: 3,
+    qty: 15,
+    size: 8,
+    "img-link": ""
+}, {
+    brand: "Nike",
+    color: "White",
+    price: 1999,
+    id: 4,
+    qty: 15,
+    size: 8,
+    "img-link": ""
+}, {
+    brand: "Nike",
+    color: "Brown",
+    price: 899,
+    id: 5,
+    qty: 6,
+    size: 8,
+    "img-link": ""
+}, {
+    brand: "Nike",
+    color: "Blue",
+    price: 560,
+    id: 6,
+    qty: 15,
+    size: 7,
+    "img-link": ""
+}, {
+    brand: "Nike",
+    color: "Orange",
+    price: 899,
+    id: 7,
+    qty: 10,
+    size: 7,
+    "img-link": ""
+}
+]
