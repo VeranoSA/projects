@@ -38,7 +38,6 @@ let shoesArray = [{
     }
 ]
 let shoes;
-// console.log(localShoes);
 if (localShoes) {
     console.log('found catalogue on local storage')
     shoes = ShoeFactory(localShoes);
@@ -46,9 +45,6 @@ if (localShoes) {
     console.log('using defualt catalogue')
     shoes = ShoeFactory(shoesArray);
 }
-
-
-let searchBtnElement = document.getElementById('searchButton');
 
 
 let displayShoes = function (shoesToDisplay) {
@@ -60,6 +56,8 @@ let displayShoes = function (shoesToDisplay) {
     var shoesHTML = shoesTemplate(shoesData);
     shoesDataElement.innerHTML = shoesHTML;
 };
+
+let searchBtnElement = document.getElementById('searchButton');
 
 searchBtnElement.addEventListener('click', function search() {
     let shoeBrand = document.getElementById('shoeBrand').value;
