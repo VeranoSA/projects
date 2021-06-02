@@ -255,7 +255,6 @@ p {
 }
 
 /*===========================CUSTOM CSS=======================*/
-
 button,
 input:focus,
 button,
@@ -287,7 +286,7 @@ input:active {
 
 #searchButton:hover,
 #addButton:hover {
-    background-color:rgb(18, 163, 225);
+    background-color: #6fb6fc;
 }
 
 .center {
@@ -302,11 +301,11 @@ select,
 #new-shoe-price,
 #new-shoe-qty {
     margin: 0 10px;
-    background-color: rgb(18, 163, 225);
+    background-color: #6fb6fc;
     width: 200px;
     height: 50px;
     font-size: 20px;
-    color: rgb(11, 10, 10);
+    color:white;
     border: 1px solid black;
     border-radius: 2px;
 }
@@ -325,12 +324,14 @@ a {
     text-align: center;
 }
 
+
 #nav-col {
+
     height: 90px;
     width: 100%;
     position: fixed;
     top: 0;
-    background-color: rgb(18, 163, 225);
+    background-color: #6fb6fc;
     padding: 0;
     z-index: 99;
 }
@@ -348,8 +349,9 @@ nav a {
 }
 
 nav a:hover {
-    color: rgba(244, 244, 244, 0.968);
+    color: black;
     background-color: #4FA2F5;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
 
@@ -359,7 +361,34 @@ nav a:hover {
 
 #shoesArea {
     margin-top: 80px;
+
     width: 99%;
     height: 500px;
     overflow: auto;
+}
+.card {
+    height: 350px;
+    width: 250px;
+ 
+}
+
+.card img {
+    width: 180px;
+    height: 160px;
+}
+
+.card button {
+
+    border: none;
+    font-size: 24px;
+    width: 70px;
+    background-color: white;
+    height: 30px;
+    text-align: center;
+}
+
+.card button:hover {
+    border: none;
+    border-radius: 25px;
+    background-color: lime;
 }
