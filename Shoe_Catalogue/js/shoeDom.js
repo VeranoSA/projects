@@ -35,6 +35,24 @@ let shoesArray = [{
         qty: 10,
         size: 5,
         "img-link": "img/adidas blue.jpeg"
+    },
+    {
+        brand: "Gucci",
+        color: "Blue",
+        price: 999,
+        id: 1,
+        qty: 10,
+        size: 5,
+        "img-link": "img/gucci blue.jpg"
+    },
+    {
+        brand: "Gucci",
+        color: "Black",
+        price: 999,
+        id: 1,
+        qty: 10,
+        size: 5,
+        "img-link": "img/gucci black.jpg"
     }
 ]
 let shoes;
