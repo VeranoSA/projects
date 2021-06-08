@@ -18,6 +18,7 @@
             <br> Stock Available : {{this.qty}}
             <br>
             <button value={{this.id}} onclick="addToCart(this.value)">
+                <i class="fas fa-shopping-cart"></i>
             </button>
         </div>
         {{/each}}
@@ -34,7 +35,7 @@
         <nav>
             <a class="" href="#">Home</a>
             <a href="">Admin</a>
-            <a href="">Cart</a>
+            <a href="">Cart<i class="fas fa-shopping-cart"></i></a>
         </nav>
     </div>
 </div>
@@ -46,12 +47,10 @@
             <select id="shoeBrand" class="inline-block">
                 <option value="null">All Brands</option>
                     <option class="" id="" value="Le Coq">Le Coq</option>
-                    <option class="" id="" value="Sketchers">Sketchers</option>
                     <option class="" id="" value="Fila">Fila</option>
                     <option class="" id="" value="Adidas">Adidas</option>
                     <option class="" id="" value="Nike">Nike</option>
                     <option class="" id="" value="Puma">Puma</option>
-                    <option class="" id="" value="Timberland">Timberland</option>
 
             </select>
         </div>
@@ -60,25 +59,20 @@
                 <option value="null">All Colors</option>
                 <option class="" id="" value="Black">Black</option>
                 <option class="" id="" value="Blue">Blue</option>
-                <option class="" id="" value="Brown">Brown</option>
-                <option class="" id="" value="Gold">Gold</option>
+                <option class="" id="" value="Multicolour">Multicolour</option>
                 <option class="" id="" value="Red">Red</option>
+                <option class="" id="" value="Grey">Grey</option>
+                <option class="" id="" value="Green">Green</option>
                 <option class="" id="" value="Orange">Orange</option>
                 <option class="" id="" value="Pink">Pink</option>
                 <option class="" id="" value="Purple">Purple</option>
                 <option class="" id="" value="White">White</option>
                 <option class="" id="" value="Yellow">Yellow</option>
-
-
             </select>
         </div>
         <div class="col-3">
             <select id="shoeSize" class="inline-block">
                 <option value="null">All Sizes</option>
-                <option class="" id="" value="1">1</option>
-                <option class="" id="" value="2">2</option>
-                <option class="" id="" value="3">3</option>
-                <option class="" id="" value="4">4</option>
                 <option class="" id="" value="5">5</option>
                 <option class="" id="" value="6">6</option>
                 <option class="" id="" value="7">7</option>
@@ -87,7 +81,6 @@
                 <option class="" id="" value="10">10</option>
                 <option class="" id="" value="11">11</option>
                 <option class="" id="" value="12">12</option>
-                <option class="" id="" value="13">13</option>
 
             </select>
         </div>
