@@ -96,7 +96,7 @@ let shoesArray = [
     {
         brand: "Nike",
         color: "Grey",
-        price: 999,
+        price: 1700,
         id: 10,
         qty: 10,
         size: 5,
@@ -107,7 +107,7 @@ let shoesArray = [
         color: "Pink",
         price: 1500,
         id: 11,
-        qty: 10,
+        qty: 14,
         size: 9,
         "img-link": "img/nike pink.jpg"
     },
@@ -134,7 +134,7 @@ let shoesArray = [
         color: "Black",
         price: 999,
         id: 14,
-        qty: 10,
+        qty: 12,
         size: 5,
         "img-link": "img/nike black.jpg"
     },
@@ -170,7 +170,7 @@ let shoesArray = [
         color: "White",
         price: 1900,
         id: 14,
-        qty: 10,
+        qty: 20,
         size: 6,
         "img-link": "img/puma white.jpg"
     },
@@ -206,7 +206,7 @@ let shoesArray = [
         color: "Pink",
         price: 1900,
         id: 14,
-        qty: 10,
+        qty: 25,
         size: 9,
         "img-link": "img/fila pink.jpg"
     },
@@ -215,7 +215,7 @@ let shoesArray = [
         color: "White",
         price: 1200,
         id: 14,
-        qty: 10,
+        qty: 14,
         size: 5,
         "img-link": "img/fila white 2.jpg"
     },
