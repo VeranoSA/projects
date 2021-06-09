@@ -177,7 +177,7 @@ let shoesArray = [
     {
         brand: "Puma",
         color: "Multicolour",
-        price: 999,
+        price: 1200,
         id: 14,
         qty: 10,
         size: 7,
