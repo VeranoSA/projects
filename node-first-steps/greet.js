@@ -1,6 +1,3 @@
-function greet(name) {
-    var name = "Hello, " + name;
-      return name;
+module.exports = function(name){
+    return 'Hello, ' + name;
 }
-var msg = greet('Xola')
-console.log(msg)
