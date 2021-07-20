@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.com/VeranoSA/projects.svg?branch=gh-pages)](https://travis-ci.com/VeranoSA/projects)
