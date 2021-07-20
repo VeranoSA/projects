@@ -2,5 +2,11 @@
   "dependencies": {
     "chalk": "^4.1.1",
     "figlet": "^1.5.0"
-  }
+  },
+  "devDependencies": {
+    "mocha": "^9.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+   }
 }
